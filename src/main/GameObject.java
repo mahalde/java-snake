@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class GameObject {
@@ -42,4 +43,11 @@ public class GameObject {
 		this.coordinate = coordinate;
 	}
 
+	private void key(KeyEvent keyevt) {
+		int keyCode = keyevt.getKeyCode();
+		
+		if (keyCode == KeyEvent.VK_DOWN) {
+			System.out.println("Down Key registered!");
+		}
+	}
 }
