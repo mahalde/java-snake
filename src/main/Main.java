@@ -1,9 +1,10 @@
 package main;
 
+import startScreen.TitleScreen;
+
 public class Main {
 	
 	public static void main(String[] args) {
-		System.out.println("hallo Welt");
-		System.out.println("Hello World");
+		new TitleScreen();
 	}
 }
