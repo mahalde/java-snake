@@ -1,6 +1,6 @@
 package startScreen;
 
-import sz.IO;
+import main.IO;
 
 public class TitleScreen {
 	

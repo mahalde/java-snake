@@ -1,6 +1,5 @@
 package main;
 
 public class GameScreen {
-	// TODO add game?
-	// yes.
+	// TODO Gamescreen inilization zieht sich breite & höhe von Settings
 }
