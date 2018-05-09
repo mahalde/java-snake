@@ -15,6 +15,6 @@ public class Credits {
 		System.out.println();
 		System.out.println("Malte Thienel");
 		System.out.println("Maik Weber");
-		TitleScreen.show();
+		// return to TitleScreen (show?)
 	}
 }

@@ -4,12 +4,11 @@ import main.IO;
 
 public class TitleScreen {
 	
-	public void show() {
 	public TitleScreen() {
 		show();
 	}
 	
-	public static void show() {
+	public void show() {
 		int selected;
 		showSnake();
 		System.out.println();
