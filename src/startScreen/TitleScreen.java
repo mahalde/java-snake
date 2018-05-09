@@ -8,7 +8,7 @@ public class TitleScreen {
 		show();
 	}
 	
-	public void show() {
+	public static void show() {
 		int selected;
 		showSnake();
 		System.out.println();
