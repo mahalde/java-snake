@@ -7,8 +7,8 @@ import main.Wall;
 
 public class Settings {
 
-	private int height;
-	private int width;
+	private int height = 15;
+	private int width = 15;
 	public Settings() {
 		show();
 		aendern();
@@ -34,12 +34,17 @@ public class Settings {
 		
 		switch(change) {
 		case 1:
-			this.setHeight(IO.readInt("Neue Höhe: "));
+			do {
+				this.setHeight(IO.readInt("Neue Höhe(10 - 30): "));
+			}while(this.getHeight() < 10 || this.getHeight() > 30);
+			
 			show();
 			aendern();
 			break;
 		case 2:
-			this.setWidth(IO.readInt("Neue Breite: "));
+			do {
+				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
+			}while(this.getWidth() < 10 || this.getWidth() > 30);
 			show();
 			aendern();
 			break;
