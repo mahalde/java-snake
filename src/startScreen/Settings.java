@@ -15,13 +15,10 @@ public class Settings {
 	}
 
 	public void show() {
-<<<<<<< HEAD
 		
 		System.out.println("      Einstellungen");
-=======
 		TitleScreen.showSnake();
 		System.out.println("         Einstellungen");
->>>>>>> 9ed921fb8117ad6e8e088707a10f93e03841aadb
 		System.out.println();
 		System.out.println("1. Höhe: " + this.height);
 		System.out.println("2. Breite: " + this.width);
