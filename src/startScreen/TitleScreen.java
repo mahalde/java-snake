@@ -15,6 +15,7 @@ public class TitleScreen {
 		System.out.println("1. Start");
 		System.out.println("2. Einstellungen");
 		System.out.println("3. Beenden");
+		System.out.println("9. Credits");
 		do {
 			selected = IO.readInt("Was möchtest du auswählen: ");
 		}while(selected < 1 || selected > 3);
@@ -26,6 +27,9 @@ public class TitleScreen {
 			break;
 		case 2:
 			new Settings(); // Öffnet die Einstellungen.
+			break;
+		case 9:
+			new Credits();
 			break;
 		default: // Beendet das Problem bei anderen Eingaben. (ggf. Ausgabe #3)
 			return;
