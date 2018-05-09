@@ -2,7 +2,7 @@ package main;
 
 public class Wall extends GameObject {
 
-	private static char symbol;
+	private static char symbol = '#';
 	
 	public Wall() {
 		super();

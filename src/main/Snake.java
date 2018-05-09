@@ -2,15 +2,13 @@ package main;
 
 import java.util.concurrent.TimeUnit;
 
-import sz.IO;
-
 public class Snake extends GameObject {
 
 	protected boolean running;
 	private char movingDir = 'd';
 	private int startX;
 	private int startY;
-	private static char symbol;
+	private static char symbol = 'O';
 	
 	public void keyReader() {
 		while (running) {

@@ -2,7 +2,7 @@ package main;
 
 public class Fruit extends GameObject {
 	
-	private static char symbol;
+	private static char symbol = '*';
 
 	public static char getSymbol() {
 		return symbol;
