@@ -10,12 +10,7 @@ public class TitleScreen {
 	
 	public void show() {
 		int selected;
-		System.out.println("   _____             _        ");
-		System.out.println("  / ____|           | |       ");
-		System.out.println(" | (___  _ __   __ _| | _____ ");
-		System.out.println("  \\___ \\| '_ \\ / _` | |/ / _ \\");
-		System.out.println("  ____) | | | | (_| |   <  __/");
-		System.out.println(" |_____/|_| |_|\\__,_|_|\\_\\___|");
+		showSnake();
 		System.out.println();
 		System.out.println("1. Start");
 		System.out.println("2. Einstellungen");
@@ -35,5 +30,14 @@ public class TitleScreen {
 		default: // Beendet das Problem bei anderen Eingaben. (ggf. Ausgabe #3)
 			return;
 		}
+	}
+	
+	public static void showSnake() {
+		System.out.println("   _____             _        ");
+		System.out.println("  / ____|           | |       ");
+		System.out.println(" | (___  _ __   __ _| | _____ ");
+		System.out.println("  \\___ \\| '_ \\ / _` | |/ / _ \\");
+		System.out.println("  ____) | | | | (_| |   <  __/");
+		System.out.println(" |_____/|_| |_|\\__,_|_|\\_\\___|");
 	}
 }

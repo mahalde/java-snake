@@ -1,5 +1,7 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+package main;
+
+import java.io.*;
+import java.lang.*;
 
 // Hilfsklasse mit Ein-/Ausgabeanweisungen
 public class IO {
