@@ -14,14 +14,10 @@ public class Settings {
 		aendern();
 	}
 
-	public void show() {
-<<<<<<< HEAD
-		
+	public void show() {	
 		System.out.println("      Einstellungen");
-=======
-		TitleScreen.showSnake();
+		showSettings();
 		System.out.println("         Einstellungen");
->>>>>>> 9ed921fb8117ad6e8e088707a10f93e03841aadb
 		System.out.println();
 		System.out.println("1. Höhe: " + this.height);
 		System.out.println("2. Breite: " + this.width);
@@ -58,7 +54,7 @@ public class Settings {
 			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
 			break;
 		default:
-			TitleScreen.show();
+			// returning back to TitleScreen (show?)
 			break;
 		}
 		
@@ -80,6 +76,17 @@ public class Settings {
 
 	public void setWidth(int width) {
 		this.width = width;
+	}
+	
+	void showSettings(){
+		System.out.println("  ______ _           _       _ _                              ");
+		System.out.println(" |  ____(_)         | |     | | |                             ");
+		System.out.println(" | |__   _ _ __  ___| |_ ___| | |_   _ _ __   __ _  ___ _ __  ");
+		System.out.println(" |  __| | | '_ \\/ __| __/ _ \\ | | | | | '_ \\ / _` |/ _ \\ '_ \\ ");
+		System.out.println(" | |____| | | | \\__ \\ ||  __/ | | |_| | | | | (_| |  __/ | | |");
+		System.out.println(" |______|_|_| |_|___/\\__\\___|_|_|\\__,_|_| |_|\\__, |\\___|_| |_|");
+		System.out.println("                                              __/ |           ");
+		System.out.println("                                             |___/            ");
 	}
 
 }
