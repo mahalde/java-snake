@@ -4,13 +4,22 @@ import main.IO;
 
 public class TitleScreen {
 	
+<<<<<<< HEAD
 	public void show() {
+=======
+	public TitleScreen() {
+		show();
+	}
+	
+	public static void show() {
+>>>>>>> 9ed921fb8117ad6e8e088707a10f93e03841aadb
 		int selected;
 		showSnake();
 		System.out.println();
 		System.out.println("1. Start");
 		System.out.println("2. Einstellungen");
 		System.out.println("3. Beenden");
+		System.out.println("9. Credits");
 		do {
 			selected = IO.readInt("Was möchtest du auswählen: ");
 		} while(selected < 1 || selected > 3);
@@ -22,6 +31,9 @@ public class TitleScreen {
 			break;
 		case 2:
 			new Settings(); // Öffnet die Einstellungen.
+			break;
+		case 9:
+			new Credits();
 			break;
 		default: // Beendet das Problem bei anderen Eingaben. (ggf. Ausgabe #3)
 			return;
