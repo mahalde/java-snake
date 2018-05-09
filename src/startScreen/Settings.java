@@ -14,9 +14,18 @@ public class Settings {
 		aendern();
 	}
 
+<<<<<<< HEAD
 	public void show() {	
+=======
+	public void show() {
+		
+>>>>>>> branch 'master' of https://www.github.com/onlyflix/java-snake
 		System.out.println("      Einstellungen");
+<<<<<<< HEAD
 		showSettings();
+=======
+		TitleScreen.showSnake();
+>>>>>>> branch 'master' of https://www.github.com/onlyflix/java-snake
 		System.out.println("         Einstellungen");
 		System.out.println();
 		System.out.println("1. Höhe: " + this.height);
