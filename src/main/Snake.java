@@ -10,6 +10,7 @@ public class Snake extends GameObject {
 	private char movingDir = 'd';
 	private int startX;
 	private int startY;
+	private static char symbol;
 	
 	public void keyReader() {
 		while (running) {
@@ -60,5 +61,13 @@ public class Snake extends GameObject {
 
 	public void setMovingDir(char movingDir) {
 		this.movingDir = movingDir;
+	}
+
+	public static char getSymbol() {
+		return symbol;
+	}
+
+	public static void setSymbol(char symbol) {
+		Snake.symbol = symbol;
 	}
 }

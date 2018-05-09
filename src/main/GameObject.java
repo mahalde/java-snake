@@ -4,24 +4,12 @@ import java.util.ArrayList;
 
 public class GameObject {
 
-	char symbol;
 	ArrayList<int[]> position;
 	int[] coordinate;
 	
 	
 	public GameObject() {
 	}
-
-
-	public char getSymbol() {
-		return symbol;
-	}
-
-
-	public void setSymbol(char symbol) {
-		this.symbol = symbol;
-	}
-
 
 	public ArrayList<int[]> getPosition() {
 		return position;
