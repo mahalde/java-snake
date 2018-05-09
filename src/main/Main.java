@@ -5,7 +5,8 @@ import startScreen.TitleScreen;
 public class Main {
 	
 	public static void main(String[] args) {
-		new TitleScreen();
+		TitleScreen screen = new TitleScreen();
+		screen.show();
 	}
 	
 }

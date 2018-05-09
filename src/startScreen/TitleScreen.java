@@ -4,10 +4,6 @@ import main.IO;
 
 public class TitleScreen {
 	
-	public TitleScreen() {
-		show();
-	}
-	
 	public void show() {
 		int selected;
 		showSnake();
@@ -17,12 +13,12 @@ public class TitleScreen {
 		System.out.println("3. Beenden");
 		do {
 			selected = IO.readInt("Was möchtest du auswählen: ");
-		}while(selected < 1 || selected > 3);
+		} while(selected < 1 || selected > 3);
 
 		
 		switch(selected) {
 		case 1:
-			// new Game(); // Erstellt den Gamescreen mit dem Settings
+			// new GameScreen(); // Erstellt den Gamescreen mit dem Settings
 			break;
 		case 2:
 			new Settings(); // Öffnet die Einstellungen.
@@ -32,7 +28,7 @@ public class TitleScreen {
 		}
 	}
 	
-	public static void showSnake() {
+	public void showSnake() {
 		System.out.println("   _____             _        ");
 		System.out.println("  / ____|           | |       ");
 		System.out.println(" | (___  _ __   __ _| | _____ ");

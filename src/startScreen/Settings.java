@@ -15,7 +15,7 @@ public class Settings {
 	}
 
 	public void show() {
-		TitleScreen.showSnake();
+		
 		System.out.println("      Einstellungen");
 		System.out.println();
 		System.out.println("1. Höhe: " + this.height);
