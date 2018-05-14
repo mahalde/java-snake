@@ -5,7 +5,7 @@ import main.IO;
 import main.Snake;
 import main.Wall;
 
-public class Settings {
+public class Settings extends main.Main{
 
 	private int height = 15;
 	private int width = 15;
@@ -54,6 +54,7 @@ public class Settings {
 			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
 			break;
 		default:
+			
 			// returning back to TitleScreen (show?)
 			break;
 		}
