@@ -27,7 +27,12 @@ public class TitleScreen {
 		
 		switch(selected) {
 		case 1:
-			new GameScreen(settings.getWidth(), settings.getHeight());
+			try {
+				new GameScreen(settings.getWidth(), settings.getHeight()); // Erstellt den GameScreen, dabei bekommt er die eingestellten Settings übergeben
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
 			break;
 		case 2:
 			do {

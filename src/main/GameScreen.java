@@ -1,17 +1,16 @@
 package main;
 
 public class GameScreen {
-	// TODO Gamescreen inilization zieht sich breite & höhe von Settings
 	
 	public GameScreen(int width, int height){ // Bekommt die Settings übergeben, statt das sie neu gezogen werden müssen
 		char fruit = Fruit.getSymbol();
 		char wall = Wall.getSymbol();
 		char snake = Snake.getSymbol();
-		checkVariables(width, height);
+		// checkVariables(width, height); // Funktioniert soweit 
 		
 	}
 	
-	public void mergeLayers() { // fügt die 3 GameLayer zusammen
+	public void mergeLayers() { // fügt die 3 Spielebenen(Snake, Wall, Fruit) zusammen
 		
 	}
 	
