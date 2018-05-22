@@ -2,6 +2,7 @@ package startScreen;
 
 import java.util.concurrent.TimeUnit;
 
+import main.GameScreen;
 import main.IO;
 
 public class TitleScreen {
@@ -26,7 +27,7 @@ public class TitleScreen {
 		
 		switch(selected) {
 		case 1:
-			// new GameScreen(); // Erstellt den Gamescreen mit dem Settings
+			new GameScreen(settings.getWidth(), settings.getHeight());
 			break;
 		case 2:
 			do {
@@ -44,9 +45,16 @@ public class TitleScreen {
 			}
 			this.show(); // Rekursiv zum TitleScreen zurückkehren
 			break;
-		default: // Beendet das Spiel.
-			System.out.println("Auf Wiedersehen!");
-			return;
+		default: 
+			char exit = 0;
+			exit = IO.readChar("Bist du sicher(y/n): "); // Sicherheitsabfrage
+			if(exit == 'y') {
+				showBye();
+				return; // Beendet das Spiel.
+			}
+			else {
+				show();
+			}
 		}
 	}
 	
@@ -59,10 +67,22 @@ public class TitleScreen {
 		System.out.println(" |_____/|_| |_|\\__,_|_|\\_\\___|");
 	}
 	
+	public void showBye() {
+		for(int i = 0; i < 50; i++) {
+			System.out.println();
+		}
+		System.out.println("                 __  __          ___          _                    _                _ ");
+		System.out.println("     /\\         / _| \\ \\        / (_)        | |                  | |              | |");
+		System.out.println("    /  \\  _   _| |_   \\ \\  /\\  / / _  ___  __| | ___ _ __ ___  ___| |__   ___ _ __ | |");
+		System.out.println("   / /\\ \\| | | |  _|   \\ \\/  \\/ / | |/ _ \\/ _` |/ _ \\ '__/ __|/ _ \\ '_ \\ / _ \\ '_ \\| |");
+		System.out.println("  / ____ \\ |_| | |      \\  /\\  /  | |  __/ (_| |  __/ |  \\__ \\  __/ | | |  __/ | | |_|");
+		System.out.println(" /_/    \\_\\__,_|_|       \\/  \\/   |_|\\___|\\__,_|\\___|_|  |___/\\___|_| |_|\\___|_| |_(_)");
+	}
+	
 	public int getSelected() {
 		return selected;
 	}
-
+	
 	public void setSelected(int selected) {
 		this.selected = selected;
 	}
