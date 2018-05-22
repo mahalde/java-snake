@@ -5,10 +5,10 @@ import main.IO;
 import main.Snake;
 import main.Wall;
 
-public class Settings extends main.Main{
-
+public class Settings{
 	private int height = 15;
 	private int width = 15;
+	
 	public Settings() {
 		show();
 		aendern();
@@ -38,29 +38,37 @@ public class Settings extends main.Main{
 			do {
 				this.setHeight(IO.readInt("Neue Höhe(10 - 30): "));
 			}while(this.getHeight() < 10 || this.getHeight() > 30);
+			show();
+			aendern();
 			break;
 		case 2:
 			do {
 				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
 			}while(this.getWidth() < 10 || this.getWidth() > 30);
+			show();
+			aendern();
 			break;
 		case 3:
 			Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
+			show();
+			aendern();
 			break;
 		case 4:
 			Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
+			show();
+			aendern();
 			break;
 		case 5:
 			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
+			show();
+			aendern();
 			break;
 		default:
-			
+			System.out.println("Test aendere");
 			// returning back to TitleScreen (show?)
 			break;
 		}
 		
-		show();
-		aendern();
 	}
 
 	public int getHeight() {
