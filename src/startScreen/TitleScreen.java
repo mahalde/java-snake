@@ -6,9 +6,10 @@ import main.IO;
 
 public class TitleScreen {
 	private int selected = 0;
+	Settings settings = new Settings();
 
 	public TitleScreen() {
-
+		
 	}
 	
 	public void show() {
@@ -20,7 +21,7 @@ public class TitleScreen {
 		System.out.println("4. Credits");
 		do {
 			selected = IO.readInt("Was möchtest du auswählen: ");
-		} while(selected < 1 || selected > 4);
+		} while(selected < 1 || selected > 4); // Begrenzungsabfrage
 
 		
 		switch(selected) {
@@ -28,18 +29,23 @@ public class TitleScreen {
 			// new GameScreen(); // Erstellt den Gamescreen mit dem Settings
 			break;
 		case 2:
-			new Settings(); // Öffnet die Einstellungen. HINT: Er erstellt immer wieder neue Einstellungen, daher werden sie nicht gespeichert.
+			do {
+				settings.show(); // Zeigt die Einstellungen an
+				settings.aendern(); // Öffnet den Änderungsdialog der Einstellungen
+			}while(settings.getChange() != 6); // Führt die Einstellungen solange aus, solange der User die Einstellungen nicht verlässt (6 = Verlassen)
+
 			break;
 		case 4:
-			new Credits();
+			new Credits(); // Erstellt ein Objekt der Credits (Ist nur eine Textausgabe)
 			try {
-				TimeUnit.SECONDS.sleep(5);
+				TimeUnit.SECONDS.sleep(5); // Wartet 5 Sekunden
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			this.show();
+			this.show(); // Rekursiv zum TitleScreen zurückkehren
 			break;
-		default: // Beendet das Problem bei anderen Eingaben. (ggf. Ausgabe #3)
+		default: // Beendet das Spiel.
+			System.out.println("Auf Wiedersehen!");
 			return;
 		}
 	}

@@ -8,15 +8,15 @@ import main.Wall;
 public class Settings{
 	private int height = 15;
 	private int width = 15;
+	private int change = 0;
 	
 	public Settings() {
-		show();
-		aendern();
+
 	}
 
 	public void show() {	
 		System.out.println("      Einstellungen");
-		showSettings();
+		this.showSettings();
 		System.out.println("         Einstellungen");
 		System.out.println();
 		System.out.println("1. Höhe: " + this.height);
@@ -28,45 +28,43 @@ public class Settings{
 	}
 	
 	public void aendern() {
-		int change;
+
 		do {
 			change = IO.readInt("Was möchten Sie ändern: ");
-		}while(change < 1 || change > 6);
+		}while(change < 1 || change > 6); // Begrenzungsabfrage
 		
 		switch(change) {
 		case 1:
 			do {
 				this.setHeight(IO.readInt("Neue Höhe(10 - 30): "));
-			}while(this.getHeight() < 10 || this.getHeight() > 30);
-			show();
-			aendern();
+			}while(this.getHeight() < 10 || this.getHeight() > 30); // Begrenzungsabfrage
+			show(); // Zeigt die Einstellungen
+			aendern(); // Zeigt den Änderungsdialog der Einstellungen
 			break;
 		case 2:
 			do {
 				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
-			}while(this.getWidth() < 10 || this.getWidth() > 30);
-			show();
-			aendern();
+			}while(this.getWidth() < 10 || this.getWidth() > 30); // Begrenzungsabfrage
+			show(); // Zeigt die Einstellungen
+			aendern(); // Zeigt den Änderungsdialog der Einstellungen
 			break;
 		case 3:
 			Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
-			show();
-			aendern();
+			show(); // Zeigt die Einstellungen
+			aendern(); // Zeigt den Änderungsdialog der Einstellungen
 			break;
 		case 4:
 			Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
-			show();
-			aendern();
+			show(); // Zeigt die Einstellungen
+			aendern(); // Zeigt den Änderungsdialog der Einstellungen
 			break;
 		case 5:
 			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
-			show();
-			aendern();
+			show(); // Zeigt die Einstellungen
+			aendern(); // Zeigt den Änderungsdialog der Einstellungen
 			break;
-		default:
-			System.out.println("Test aendere");
-			// returning back to TitleScreen (show?)
-			break;
+		default: // Dadurch das nichts ausgeführt wird, kehrt er zum TitleScreen zurück.
+			break; // Es ist nicht möglich, show() & aenderen() danach einzufügen, da er sonst nicht zum TitleScreen zurückkehrt
 		}
 		
 	}
@@ -86,6 +84,15 @@ public class Settings{
 	public void setWidth(int width) {
 		this.width = width;
 	}
+	
+	public int getChange() {
+		return change;
+	}
+
+	public void setChange(int change) {
+		this.change = change;
+	}
+
 	
 	void showSettings(){
 		System.out.println("  ______ _           _       _ _                              ");
