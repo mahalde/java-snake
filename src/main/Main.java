@@ -8,7 +8,7 @@ public class Main {
 		TitleScreen screen = new TitleScreen();
 		do {
 			screen.show();
-		}while(screen.getSelected() == 2 || screen.getSelected() == 9);
+		}while(screen.getSelected() == 2 || screen.getSelected() == 4);
 
 	}
 	
