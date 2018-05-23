@@ -1,13 +1,19 @@
 package main;
 
-public class Wall extends GameObject {
+import java.util.ArrayList;
 
+public class Wall {
 	private static char symbol = '#';
+	ArrayList<int[]> position;
 	
 	public Wall() {
-		super();
+		
 	}
 
+	public void createWall(int width, int height) {
+		
+	}
+	
 	public static char getSymbol() {
 		return symbol;
 	}

@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import main.GameScreen;
 import main.IO;
+import main.Main;
 
 public class TitleScreen {
 	private int selected = 0;
@@ -27,12 +28,7 @@ public class TitleScreen {
 		
 		switch(selected) {
 		case 1:
-			try {
-				new GameScreen(settings.getWidth(), settings.getHeight()); // Erstellt den GameScreen, dabei bekommt er die eingestellten Settings übergeben
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-
+			// Kehrt zurück zur Main, damit der Gamescreen erstellt werden kann
 			break;
 		case 2:
 			do {
@@ -86,6 +82,14 @@ public class TitleScreen {
 	
 	public int getSelected() {
 		return selected;
+	}
+	
+	public int getWidth() {
+		return settings.getWidth();
+	}
+	
+	public int getHeight() {
+		return settings.getHeight();
 	}
 	
 	public void setSelected(int selected) {

@@ -2,13 +2,14 @@ package main;
 
 import java.util.ArrayList;
 
-public class GameObject {
+public abstract class GameObject {
 
-	ArrayList<int[]> position;
-	int[] coordinate;
-	
+
+	int[] coordinate = new int[2]; // x & y Koordinaten
+	ArrayList<int[]> position = new ArrayList<int[]>(); // ArrayList, 2 dimensional dargestellt durch int-Array
 	
 	public GameObject() {
+		
 	}
 
 	public ArrayList<int[]> getPosition() {
