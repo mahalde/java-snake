@@ -13,6 +13,8 @@ public class Main {
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight()); // Erstellt den GameScreen, dabei bekommt er die eingestellten Settings übergeben
 		
 		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight());
+		Wall wall = new Wall(screen.getWidth(), screen.getHeight());
+		// Snake snake = new Snake(screen.getWidth(), screen.getHeight());
 		
 		// game.checkVariables(screen.getWidth(), screen.getHeight());
 	}
