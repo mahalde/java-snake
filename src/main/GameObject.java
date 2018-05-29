@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public abstract class GameObject {
+public class GameObject {
 
 
 	int[] coordinate = new int[2]; // x & y Koordinaten
@@ -16,7 +16,6 @@ public abstract class GameObject {
 		return position;
 	}
 
-
 	public void setPosition(ArrayList<int[]> position) {
 		this.position = position;
 	}
@@ -29,5 +28,10 @@ public abstract class GameObject {
 
 	public void setCoordinate(int[] coordinate) {
 		this.coordinate = coordinate;
+	}
+	
+	public ArrayList<int[]> getWall(){
+		return position;
+		
 	}
 }

@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Fruit extends GameObject {
 	
 	private static char symbol = '*';
@@ -10,6 +12,15 @@ public class Fruit extends GameObject {
 	}
 	
 	public void createFruit(int width, int height) {
+		ArrayList<int[]> position = getWall();
+		// Genaue Koordinaten Ausgabe		
+		for(int i = 1; i < position.size(); i++) {
+			for(int j = 0; j < 2; j++) {
+				System.out.print(position.get(i)[j] + " ");		
+			}
+			System.out.println();
+		}
+
 		int randomWidth = 0 + (int) Math.floor(Math.random()*((width - 1) - 0 + 1)); // Nimmt eine Zufallszahl zwischen 0 & Width - 1
 		int randomHeight = 0 + (int) Math.floor(Math.random()*((height - 1) - 0 + 1)); // Nimmt eine Zufallszahl zwischen 0 & Height - 1
 		this.coordinate[0] = randomWidth; // Schreibt die Zufallszahl in das Array

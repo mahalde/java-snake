@@ -13,24 +13,30 @@ public class Wall extends GameObject{
 		int y = 1;
 		for(int zaehler = 0; zaehler < height; zaehler++) {
 			for(int zaehler2 = 0; zaehler2 < width; zaehler2++) {
-				if(x == 1 || x == height || y == 1 || y == width) {
-					int[] coordinate = new int[2];
-					this.coordinate[0] = zaehler;
-					this.coordinate[1] = zaehler2;
-					position.add(coordinate);
+				if(x == 1 || x == width || y == 1 || y == height) {
+					int[] coordinate = new int[2]; // Neu Instanzierung des Arrays, da man nicht die gleiche Instanz eines Arrays zur Liste hinzufügen sollte
+					coordinate[0] = zaehler;
+					coordinate[1] = zaehler2;
+					position.add(coordinate); // ArrayList wo alle Koordinaten stehen, auf der eine Wand platziert ist
+					System.out.print("*");
 				}
 				else {
+					System.out.print(" ");
 				}
 				x++;
 			}
+			System.out.println("");
 			y++;
 			x = 1;
 		}	
-			for(int i = 1; i < position.size(); i++) {
-				for(int j = 0; j < 2; j++) {
-					System.out.println(position.get(i)[j]);		
-				}
-			}
+		
+// Genaue Koordinaten Ausgabe		
+//			for(int i = 1; i < position.size(); i++) {
+//				for(int j = 0; j < 2; j++) {
+//					System.out.print(position.get(i)[j] + " ");		
+//				}
+//				System.out.println();
+//			}
 
 	}
 	
