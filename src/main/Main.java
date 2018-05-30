@@ -17,7 +17,12 @@ public class Main {
 		Wall wall = new Wall(screen.getWidth(), screen.getHeight());
 		ArrayList<int[]> positionWand = new ArrayList<int[]>();
 		positionWand = wall.getWand();
+		
+		// Prinzipiell muss die Snake vor der Fruit erstellt werden, damit die Fruit nicht in der Snake erscheint.
+		
 		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWand);
+		ArrayList<int[]> positionFruit = new ArrayList<int[]>();
+		positionFruit = fruit.getFrucht();
 
 		// Snake snake = new Snake(screen.getWidth(), screen.getHeight());
 		

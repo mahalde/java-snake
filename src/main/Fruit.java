@@ -39,4 +39,9 @@ public class Fruit extends GameObject {
 		Fruit.symbol = symbol;
 	}
 	
+	public ArrayList<int[]> getFrucht(){
+		return position;
+		
+	}
+	
 }
