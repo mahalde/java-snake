@@ -15,10 +15,7 @@ public class Settings{
 	}
 
 	public void show() {	
-		System.out.println("      Einstellungen");
 		this.showSettings();
-		System.out.println("         Einstellungen");
-		System.out.println();
 		System.out.println("1. Höhe: " + this.height);
 		System.out.println("2. Breite: " + this.width);
 		System.out.println("3. Schlangensymbol: " + Snake.getSymbol());
@@ -28,40 +25,35 @@ public class Settings{
 	}
 	
 	public void aendern() {
-
+		show(); /* Zeigt die Einstellungen */
 		do {
 			change = IO.readInt("Was möchten Sie ändern: ");
 		}while(change < 1 || change > 6); /* Begrenzungsabfrage */
 		
 		switch(change) {
-		case 1:
+		case 1: /* Höhe ändern */
 			do {
 				this.setHeight(IO.readInt("Neue Höhe(10 - 30): "));
 			}while(this.getHeight() < 10 || this.getHeight() > 30); /* Begrenzungsabfrage */
-			show(); /* Zeigt die Einstellungen */
-			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
 			break;
-		case 2:
+		case 2: /* Breite ändern */
 			do {
 				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
 			}while(this.getWidth() < 10 || this.getWidth() > 30); /* Begrenzungsabfrage */
-			show(); /* Zeigt die Einstellungen */
-			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
 			break;
-		case 3:
+		case 3: /* Schlangensymbol ändern */
 			Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
-			show(); /* Zeigt die Einstellungen */
-			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
 			break;
-		case 4:
+		case 4: /* Wandsymbol ändern */
 			Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
-			show(); /* Zeigt die Einstellungen */
-			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
 			break;
-		case 5:
+		case 5: /* Fruchtsymbol ändern */
 			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
-			show(); /* Zeigt die Einstellungen */
-			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
 			break;
 		default: /* Dadurch das nichts ausgeführt wird, kehrt er zum TitleScreen zurück. */
 			break; /* Es ist nicht möglich, show() & aenderen() danach einzufügen, da er sonst nicht zum TitleScreen zurückkehrt */

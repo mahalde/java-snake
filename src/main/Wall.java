@@ -20,7 +20,7 @@ public class Wall extends GameObject{
 					coordinate[0] = zaehler;
 					coordinate[1] = zaehler2;
 					position.add(coordinate); /* Koordinaten der Wand in Zweidimensionalen Array, wobei es nur 2 Spalten geben kann aber unendlich Zeilen */
-					System.out.print("*");
+					System.out.print(symbol);
 				}
 				else {
 					System.out.print(" ");
