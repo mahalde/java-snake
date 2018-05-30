@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+
 import startScreen.TitleScreen;
 
 public class Main {
@@ -12,12 +14,16 @@ public class Main {
 		
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight()); // Erstellt den GameScreen, dabei bekommt er die eingestellten Settings übergeben
 		
-		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight());
 		Wall wall = new Wall(screen.getWidth(), screen.getHeight());
+		ArrayList<int[]> positionWand = new ArrayList<int[]>();
+		positionWand = wall.getWand();
+		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWand);
+
 		// Snake snake = new Snake(screen.getWidth(), screen.getHeight());
 		
 		// game.checkVariables(screen.getWidth(), screen.getHeight());
 	}
+	
 	
 	
 }

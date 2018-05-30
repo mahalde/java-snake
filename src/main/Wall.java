@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Wall extends GameObject{
 	private static char symbol = '#';
 	
@@ -17,7 +19,7 @@ public class Wall extends GameObject{
 					int[] coordinate = new int[2]; // Neu Instanzierung des Arrays, da man nicht die gleiche Instanz eines Arrays zur Liste hinzufügen sollte
 					coordinate[0] = zaehler;
 					coordinate[1] = zaehler2;
-					position.add(coordinate); // ArrayList wo alle Koordinaten stehen, auf der eine Wand platziert ist
+					position.add(coordinate); // Koordinaten der Wand in Zweidimensionalen Array, wobei es nur 2 Spalten geben kann aber unendlich Zeilen
 					System.out.print("*");
 				}
 				else {
@@ -29,6 +31,8 @@ public class Wall extends GameObject{
 			y++;
 			x = 1;
 		}	
+		
+	
 		
 // Genaue Koordinaten Ausgabe		
 //			for(int i = 1; i < position.size(); i++) {
@@ -46,6 +50,11 @@ public class Wall extends GameObject{
 
 	public static void setSymbol(char symbol) {
 		Wall.symbol = symbol;
+	}
+	
+	public ArrayList<int[]> getWand(){
+		return position;
+		
 	}
 
 }

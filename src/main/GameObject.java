@@ -30,8 +30,4 @@ public class GameObject {
 		this.coordinate = coordinate;
 	}
 	
-	public ArrayList<int[]> getWall(){
-		return position;
-		
-	}
 }
