@@ -23,35 +23,35 @@ public class TitleScreen {
 		System.out.println("4. Credits");
 		do {
 			selected = IO.readInt("Was möchtest du auswählen: ");
-		} while(selected < 1 || selected > 4); // Begrenzungsabfrage
+		} while(selected < 1 || selected > 4); /* Begrenzungsabfrage */
 
 		
 		switch(selected) {
-		case 1:
-			// Kehrt zurück zur Main, damit der Gamescreen erstellt werden kann
+		case 1: /* Start */
+			/* Kehrt zurück zur Main, damit der Gamescreen erstellt werden kann */
 			break;
-		case 2:
+		case 2: /* Einstellungen */
 			do {
-				settings.show(); // Zeigt die Einstellungen an
-				settings.aendern(); // Öffnet den Änderungsdialog der Einstellungen
-			}while(settings.getChange() != 6); // Führt die Einstellungen solange aus, solange der User die Einstellungen nicht verlässt (6 = Verlassen)
+				settings.show(); /* Zeigt die Einstellungen an */
+				settings.aendern(); /* Öffnet den Änderungsdialog der Einstellungen */
+			}while(settings.getChange() != 6); /* Führt die Einstellungen solange aus, solange der User die Einstellungen nicht verlässt (6 = Verlassen) */
 
 			break;
-		case 4:
-			new Credits(); // Erstellt ein Objekt der Credits (Ist nur eine Textausgabe)
+		case 4: /* Credits */
+			new Credits(); /* Erstellt ein Objekt der Credits (Ist nur eine Textausgabe) */
 			try {
-				TimeUnit.SECONDS.sleep(5); // Wartet 5 Sekunden
+				TimeUnit.SECONDS.sleep(5); /* Wartet 5 Sekunden */
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			this.show(); // Rekursiv zum TitleScreen zurückkehren
+			this.show(); /* Rekursiv zum TitleScreen zurückkehren */
 			break;
-		default: 
+		default: /* Beenden - Ebenfalls case3 */
 			char exit = 0;
-			exit = IO.readChar("Bist du sicher(y/n): "); // Sicherheitsabfrage
+			exit = IO.readChar("Bist du sicher(y/n): "); /* Sicherheitsabfrage */
 			if(exit == 'y') {
 				showBye();
-				return; // Beendet das Spiel.
+				return; /* Beendet das Spiel */
 			}
 			else {
 				show();
@@ -59,7 +59,7 @@ public class TitleScreen {
 		}
 	}
 	
-	public void showSnake() {
+	public void showSnake() { /* Zeigt den Snake Schriftzug */
 		System.out.println("   _____             _        ");
 		System.out.println("  / ____|           | |       ");
 		System.out.println(" | (___  _ __   __ _| | _____ ");
@@ -68,7 +68,7 @@ public class TitleScreen {
 		System.out.println(" |_____/|_| |_|\\__,_|_|\\_\\___|");
 	}
 	
-	public void showBye() {
+	public void showBye() { /* Zeigt den Auf Wiedersehen Schriftzug */
 		for(int i = 0; i < 50; i++) {
 			System.out.println();
 		}

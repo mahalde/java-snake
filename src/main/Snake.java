@@ -82,4 +82,16 @@ public class Snake extends GameObject {
 		return position;
 		
 	}
+	
+	public void showSnake() {
+		
+		/* Genaue Koordinaten Ausgabe von der Schlange */
+		 for(int i = 0; i < position.size(); i++) {
+			 System.out.print(i + ": ");
+			for(int j = 0; j < 2; j++) {
+				System.out.print("S: " + position.get(i)[j] + " ");		
+			}
+			System.out.println();
+		 }
+	}
 }

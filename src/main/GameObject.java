@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class GameObject {
 
 
-	int[] coordinate = new int[2]; // x & y Koordinaten
-	ArrayList<int[]> position = new ArrayList<int[]>(); // ArrayList, 2 dimensional dargestellt durch int-Array
+	int[] coordinate = new int[2]; /* x & y Koordinaten */
+	ArrayList<int[]> position = new ArrayList<int[]>(); /* ArrayList, 2 dimensional dargestellt durch int-Array */
 	
 	public GameObject() {
 		

@@ -5,7 +5,7 @@ public class Credits {
 		show();
 	}
 	
-	void show() {
+	void show() { /* Zeigt den Credits Schriftzug */
 		System.out.println("   _____              _ _ _       ");
 		System.out.println("  / ____|            | (_) |      ");
 		System.out.println(" | |     _ __ ___  __| |_| |_ ___ ");
@@ -15,6 +15,5 @@ public class Credits {
 		System.out.println();
 		System.out.println("Malte Thienel");
 		System.out.println("Maik Weber");
-		// return to TitleScreen (show?)
 	}
 }

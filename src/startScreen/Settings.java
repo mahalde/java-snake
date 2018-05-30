@@ -31,40 +31,40 @@ public class Settings{
 
 		do {
 			change = IO.readInt("Was möchten Sie ändern: ");
-		}while(change < 1 || change > 6); // Begrenzungsabfrage
+		}while(change < 1 || change > 6); /* Begrenzungsabfrage */
 		
 		switch(change) {
 		case 1:
 			do {
 				this.setHeight(IO.readInt("Neue Höhe(10 - 30): "));
-			}while(this.getHeight() < 10 || this.getHeight() > 30); // Begrenzungsabfrage
-			show(); // Zeigt die Einstellungen
-			aendern(); // Zeigt den Änderungsdialog der Einstellungen
+			}while(this.getHeight() < 10 || this.getHeight() > 30); /* Begrenzungsabfrage */
+			show(); /* Zeigt die Einstellungen */
+			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
 			break;
 		case 2:
 			do {
 				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
-			}while(this.getWidth() < 10 || this.getWidth() > 30); // Begrenzungsabfrage
-			show(); // Zeigt die Einstellungen
-			aendern(); // Zeigt den Änderungsdialog der Einstellungen
+			}while(this.getWidth() < 10 || this.getWidth() > 30); /* Begrenzungsabfrage */
+			show(); /* Zeigt die Einstellungen */
+			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
 			break;
 		case 3:
 			Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
-			show(); // Zeigt die Einstellungen
-			aendern(); // Zeigt den Änderungsdialog der Einstellungen
+			show(); /* Zeigt die Einstellungen */
+			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
 			break;
 		case 4:
 			Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
-			show(); // Zeigt die Einstellungen
-			aendern(); // Zeigt den Änderungsdialog der Einstellungen
+			show(); /* Zeigt die Einstellungen */
+			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
 			break;
 		case 5:
 			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
-			show(); // Zeigt die Einstellungen
-			aendern(); // Zeigt den Änderungsdialog der Einstellungen
+			show(); /* Zeigt die Einstellungen */
+			aendern(); /* Zeigt den Änderungsdialog der Einstellungen */
 			break;
-		default: // Dadurch das nichts ausgeführt wird, kehrt er zum TitleScreen zurück.
-			break; // Es ist nicht möglich, show() & aenderen() danach einzufügen, da er sonst nicht zum TitleScreen zurückkehrt
+		default: /* Dadurch das nichts ausgeführt wird, kehrt er zum TitleScreen zurück. */
+			break; /* Es ist nicht möglich, show() & aenderen() danach einzufügen, da er sonst nicht zum TitleScreen zurückkehrt */
 		}
 		
 	}
@@ -94,7 +94,7 @@ public class Settings{
 	}
 
 	
-	void showSettings(){
+	void showSettings(){ /* Zeigt den Einstellungsschriftzug */
 		System.out.println("  ______ _           _       _ _                              ");
 		System.out.println(" |  ____(_)         | |     | | |                             ");
 		System.out.println(" | |__   _ _ __  ___| |_ ___| | |_   _ _ __   __ _  ___ _ __  ");
