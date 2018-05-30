@@ -15,12 +15,14 @@ public class Main {
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight()); // Erstellt den GameScreen, dabei bekommt er die eingestellten Settings übergeben
 		
 		Wall wall = new Wall(screen.getWidth(), screen.getHeight());
-		ArrayList<int[]> positionWand = new ArrayList<int[]>();
-		positionWand = wall.getWand();
+		ArrayList<int[]> positionWall = new ArrayList<int[]>();
+		positionWall = wall.getWand();
 		
-		// Prinzipiell muss die Snake vor der Fruit erstellt werden, damit die Fruit nicht in der Snake erscheint.
+		Snake snake = new Snake(screen.getWidth(), screen.getHeight(), positionWall);
+		ArrayList<int[]> positionSnake = new ArrayList<int[]>();
+		positionSnake = snake.getSchlange();
 		
-		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWand);
+		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWall, positionSnake);
 		ArrayList<int[]> positionFruit = new ArrayList<int[]>();
 		positionFruit = fruit.getFrucht();
 

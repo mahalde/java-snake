@@ -1,15 +1,24 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Snake extends GameObject {
 
 	protected boolean running;
 	private char movingDir = 'd';
-	private int startX;
-	private int startY;
+	private static int startX;
+	private static int startY;
 	private static char symbol = 'O';
 	
+	public Snake(int width, int height, ArrayList<int[]> positionWall) {
+		startX = width / 2;
+		startY = height / 2;
+		coordinate[0] = startX;
+		coordinate[1] = startY;
+		position.add(coordinate);
+	}
+
 	public void keyReader() {
 		while (running) {
 			try {
@@ -67,5 +76,10 @@ public class Snake extends GameObject {
 
 	public static void setSymbol(char symbol) {
 		Snake.symbol = symbol;
+	}
+	
+	public ArrayList<int[]> getSchlange(){
+		return position;
+		
 	}
 }
