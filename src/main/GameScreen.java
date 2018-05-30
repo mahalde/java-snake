@@ -7,10 +7,8 @@ public class GameScreen {
 		char wall = Wall.getSymbol();
 		char snake = Snake.getSymbol();
 
-		// checkVariables(width, height); /* Funktioniert soweit */
-		
+//		 checkVariables(width, height); /* Funktioniert soweit */
 	}
-	
 	
 	public void mergeLayers() { /* fügt die 3 Spielebenen(Snake, Wall, Fruit) zusammen */
 		
