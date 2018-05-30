@@ -24,29 +24,19 @@ public class Fruit extends GameObject {
 			for(int i = 0; i < (positionWand.size() - 1); i++) {
 				if(randomHeight == positionWand.get(i)[0] && randomWidth == positionWand.get(i)[1]) { /* Prüft, ob die RandomKoordinate einer WandKoordinate endspricht */
 					readyWall = false;
-//					 System.out.println(randomHeight + " vs. " + positionWand.get(i)[0] + "WARNING WALL");
-//					 System.out.println(randomWidth + " vs. " + positionWand.get(i)[1] + "WARNING WALL");
-//					 readyWall = true; 
 					break;
 				}
 				else {
 					readyWall = true;
-//					 System.out.println(randomHeight + " vs. " + positionWand.get(i)[0]);
-//					 System.out.println(randomWidth + " vs. " + positionWand.get(i)[1]);
 				}
 			}
 			for(int i = 0; i < (positionSnake.size() - 1); i++) {
 				if(randomHeight == positionSnake.get(i)[0] && randomWidth == positionSnake.get(i)[1]) { /* Prüft, ob die RandomKoordinate einer SchlangenKoordinate entspricht */
 					readySnake = false;
-//					 System.out.println(randomHeight + " vs. " + positionSnake.get(i)[0] + "WARNING SNAKE");
-//					 System.out.println(randomWidth + " vs. " + positionSnake.get(i)[1] + "WARNING SNAKE");
-//					 readySnake = true;
 					break;
 				}
 				else {
 					readySnake = true;
-//					 System.out.println(randomHeight + " vs. " + positionWand.get(i)[0]);
-//					 System.out.println(randomWidth + " vs. " + positionWand.get(i)[1]); 
 				}
 			}
 //			 System.out.println("Zahlen: " + randomHeight + " " + randomWidth); 
