@@ -41,7 +41,7 @@ public class Fruit extends GameObject {
 				}
 			}
 //			 System.out.println("Zahlen: " + randomHeight + " " + randomWidth); 
-		}while(readyWall != true && readySnake != true);
+		} while(readyWall != true && readySnake != true);
 //		 System.out.println("FERTIG: " + randomHeight  + " " + randomWidth); 
 
 		this.coordinate[0] = randomHeight; /* Schreibt die Zufallszahl in das Array */

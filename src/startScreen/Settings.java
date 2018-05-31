@@ -28,7 +28,7 @@ public class Settings{
 		show(); /* Zeigt die Einstellungen */
 		do {
 			change = IO.readInt("Was möchten Sie ändern: ");
-		}while(change < 1 || change > 6); /* Begrenzungsabfrage */
+		} while(change < 1 || change > 6); /* Begrenzungsabfrage */
 		
 		switch(change) {
 		case 1: /* Höhe ändern */

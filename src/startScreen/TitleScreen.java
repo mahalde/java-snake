@@ -2,9 +2,7 @@ package startScreen;
 
 import java.util.concurrent.TimeUnit;
 
-import main.GameScreen;
 import main.IO;
-import main.Main;
 
 public class TitleScreen {
 	private int selected = 0;
