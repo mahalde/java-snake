@@ -14,10 +14,6 @@ public class GameScreen {
 //		 checkVariables(width, height); /* Funktioniert soweit */
 	}
 	
-	public void mergeLayers() { /* fügt die 3 Spielebenen(Snake, Wall, Fruit) zusammen */
-		
-	}
-	
 	public void show(char[][] gameScreen) { /* Visuelle Anzeige des GameScreen */
 		for(int i = 0; i < gameScreen.length; i++) {
 			for(int j = 0; j < gameScreen[0].length; j++) {

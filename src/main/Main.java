@@ -28,21 +28,15 @@ public class Main {
 		ArrayList<int[]> positionFruit = new ArrayList<int[]>();
 		positionFruit = fruit.getFrucht();
 		
-//		Soll der GameScreen die Sachen auch berechnen oder nur anzeigen ? Sonst könnte man in der Main rechnen, muss aber nicht ------------------
-		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit); /* TODO: wall, snake, fruit übergeben & damit das Spiel spielen */
+		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit); /* Erstellt ein Objekt des Gamescreen */
 		
-		do {
+		do { /* Derzeitig endlos Schleife | Soll den Gamescreen alle x Millisekunden updaten */
 			positionWall = wall.getWand();
 			positionSnake = snake.getSchlange();
 			positionFruit = fruit.getFrucht();
 			game.update(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit);
 		}while(game.finish != true);
 		
-//		wall.showWall();
-//		snake.showSnake();
-//		fruit.showFruit();
-
-//		Snake snake = new Snake(screen.getWidth(), screen.getHeight());
 		
 //		game.checkVariables(screen.getWidth(), screen.getHeight());
 	}
