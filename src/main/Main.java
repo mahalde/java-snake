@@ -31,9 +31,9 @@ public class Main {
 //		Soll der GameScreen die Sachen auch berechnen oder nur anzeigen ? Sonst könnte man in der Main rechnen, muss aber nicht ------------------
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight()); /* TODO: wall, snake, fruit übergeben & damit das Spiel spielen */
 		
-//		wall.showWall();
-//		snake.showSnake();
-//		fruit.showFruit();
+		wall.showWall();
+		snake.showSnake();
+		fruit.showFruit();
 
 //		Snake snake = new Snake(screen.getWidth(), screen.getHeight());
 		
