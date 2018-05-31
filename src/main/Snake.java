@@ -14,8 +14,8 @@ public class Snake extends GameObject {
 	public Snake(int width, int height, ArrayList<int[]> positionWall) {
 		startX = width / 2;
 		startY = height / 2;
-		coordinate[0] = startX;
-		coordinate[1] = startY;
+		coordinate[0] = startY;
+		coordinate[1] = startX;
 		position.add(coordinate);
 	}
 
