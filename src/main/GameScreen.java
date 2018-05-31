@@ -6,7 +6,7 @@ public class GameScreen {
 	
 	boolean finish = false; /* Boolean, um zu checken ob das Spiel fertig ist */
 	
-	public GameScreen(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit){ /* Bekommt die Settings übergeben, statt das sie neu gezogen werden müssen */
+	public GameScreen(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit){ /* Konstruktor des GameScreen | Bekommt die Settings übergeben, statt das sie neu gezogen werden müssen */
 		char fruit = Fruit.getSymbol();
 		char wall = Wall.getSymbol();
 		char snake = Snake.getSymbol();
@@ -37,6 +37,7 @@ public class GameScreen {
 	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit) { /* Update Gamescreen */
 		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
 
+		/* Zusammenfügen der drei ArrayLists in eine char Matrix */
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
 				for(int iWall = 0; iWall < positionWall.size(); iWall++) {
