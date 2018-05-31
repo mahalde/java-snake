@@ -20,14 +20,14 @@ public class Wall extends GameObject{
 					coordinate[0] = zaehler;
 					coordinate[1] = zaehler2;
 					position.add(coordinate); /* Koordinaten der Wand in Zweidimensionalen Array, wobei es nur 2 Spalten geben kann aber unendlich Zeilen */
-					System.out.print(symbol);
+//					System.out.print(symbol);
 				}
 				else {
-					System.out.print(" ");
+//					System.out.print(" ");
 				}
 				x++;
 			}
-			System.out.println("");
+//			System.out.println("");
 			y++;
 			x = 1;
 		}	
@@ -44,16 +44,15 @@ public class Wall extends GameObject{
 	
 	public ArrayList<int[]> getWand(){
 		return position;
-		
 	}
 	
 	public void showWall() {
 		
 		/* Genaue Koordinaten Ausgabe von der Wand */
 		 for(int i = 0; i < position.size(); i++) {
-			 System.out.print(i + ": ");
+			 System.out.print((i + 1) + ". W: ");
 			for(int j = 0; j < 2; j++) {
-				System.out.print("W: " + position.get(i)[j] + " ");		
+				System.out.print(position.get(i)[j] + " ");		
 			}
 			System.out.println();
 		 }

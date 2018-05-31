@@ -66,9 +66,9 @@ public class Fruit extends GameObject {
 	public void showFruit() {
 		/* Genaue Koordinaten Ausgabe von der Frucht */
 		 for(int i = 0; i < position.size(); i++) {
-			 System.out.print(i + ": ");
+			 System.out.print((i + 1) + ". F: ");
 			for(int j = 0; j < 2; j++) {
-				System.out.print("F: " + position.get(i)[j] + " ");		
+				System.out.print(position.get(i)[j] + " ");		
 			}
 			System.out.println();
 		 }
