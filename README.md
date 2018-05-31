@@ -3,14 +3,18 @@ A console implementation of the game "Snake" in Java
 
 main - Package
 	Fruit.java
-		In der "Fruit.java" entsteht alles zum Spielobjekt "Frucht".
-		Welches Symbol die Frucht hat, wo sie entsteht und es wird immer vorher gecheckt, 
+		In der "Fruit.java" entsteht alles zum Spielobjekt "Frucht",
+		welches Symbol die Frucht hat, wo sie entsteht und es wird immer vorher gecheckt, 
 		dass Sie nicht in einem anderen Objekt erscheint.
 		Fruit.java erbt von der Klasse GameObject.java
 -		
 	GameObject.java
 		In der "GameObject.java" werden die drei Spielobjekte: Fruit, Snake und Wall bearbeitet.
 		Sie ist die Mutterklasse der drei Objekte und gibt Ihnen Attribute und Methoden.
+-
+	GameScreen.java
+		In der "GameScreen.java" entsteht alles zum Objekt "Spielbildschirm",
+		wie die drei Spielobjekte verarbeitet werden und was auf dem Bildschirm ausgegeben wird, wenn man im Spiel ist.
 -	
 	IO.java
 		Ist eine Standard In & Out Klasse, um Text ein- und auszugeben.
@@ -20,13 +24,13 @@ main - Package
 		Dort werden Objekte erstellt und verschiedene Ereignisse verarbeitet.
 -	
 	Snake.java
-		In der "Fruit.java" entsteht alles zum Spielobjekt "Schlange".
-		Welches Symbol die Schlange hat, wo sie entsteht und wie Sie sich bewegt.
+		In der "Fruit.java" entsteht alles zum Spielobjekt "Schlange",
+		welches Symbol die Schlange hat, wo sie entsteht und wie Sie sich bewegt.
 		Snake.java erbt von der Klasse GameObject.java
 -
 	Wall.java
-		In der "Wall.java" entsteht alles zum Spielobjekt "Wand".
-		Welches Symbol die Wand hat und wo sie entsteht.
+		In der "Wall.java" entsteht alles zum Spielobjekt "Wand",
+		welches Symbol die Wand hat und wo sie entsteht.
 
 
 startScreen - Package
