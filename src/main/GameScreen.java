@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class GameScreen {
 	
 	boolean finish = false; /* Boolean, um zu checken ob das Spiel fertig ist */
+	char reason;
+	boolean fruitHit = false;
 	
 	public GameScreen(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit){ /* Konstruktor des GameScreen | Bekommt die Settings übergeben, statt das sie neu gezogen werden müssen */
 		char fruit = Fruit.getSymbol();
@@ -52,14 +54,24 @@ public class GameScreen {
 				}
 				for(int iSnake = 0; iSnake < positionSnake.size(); iSnake++) {
 					if(i == positionSnake.get(iSnake)[0] && j == positionSnake.get(iSnake)[1]) {
+						if(gameScreen[i][j] == Wall.getSymbol()) {
+							finish = true;
+							reason = 'a';
+						}
+						if(gameScreen[i][j] == Fruit.getSymbol()) {
+							// TODO: Snake +1 & New Fruit
+							fruitHit = true;
+						}
+						
 						gameScreen[i][j] = Snake.getSymbol();
 					}
 				}
 			}
 		}
 		
-		
+		reason = 'b';
 		finish = true;
 		show(gameScreen); 
 	}
+	
 }
