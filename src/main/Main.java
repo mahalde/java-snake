@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import startScreen.TitleScreen;
 
@@ -31,6 +32,11 @@ public class Main {
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit); /* Erstellt ein Objekt des Gamescreen */
 		
 		do { /* Derzeitig endlos Schleife | Soll den Gamescreen alle x Millisekunden updaten */
+			try {
+				TimeUnit.MILLISECONDS.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			positionWall = wall.getWand();
 			positionSnake = snake.getSchlange();
 			positionFruit = fruit.getFrucht();
@@ -38,8 +44,10 @@ public class Main {
 				fruit.createFruit(screen.getWidth(), screen.getHeight(), positionWall, positionSnake);
 			}
 			game.update(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit, snake);
+			snake.keyReader();
 		} while(game.finish != true);
 		
+		snake.running = false;
 		switch(game.reason) {
 			case 'a':
 				System.out.println("Du bist gegen eine Wand gelaufen!");

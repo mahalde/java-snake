@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Snake extends GameObject {
 
-	protected boolean running;
+	protected boolean running = false;
 	private char movingDir = 'd';
 	private static int startX;
 	private static int startY;
@@ -17,15 +17,16 @@ public class Snake extends GameObject {
 		coordinate[0] = startY;
 		coordinate[1] = startX;
 		position.add(coordinate);
+		this.keyReader();
 	}
 
 	public void keyReader() { /* KeyReader um die Richtung der Schlange zu bestimmen */
-		while (running) {
-			try {
-				TimeUnit.MILLISECONDS.sleep(250);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//		while (running) {
+//			try {
+//				TimeUnit.MILLISECONDS.sleep(250);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 			char direction = IO.readChar();
 			if (direction == 'w') {
 				if (this.getMovingDir() != 's') {
@@ -44,7 +45,7 @@ public class Snake extends GameObject {
 					this.setMovingDir('d');
 				}
 			}
-		}
+//		}
 	}
 
 	/**
