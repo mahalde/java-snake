@@ -37,8 +37,8 @@ public class Main {
 			if(game.fruitHit == true) {
 				fruit.createFruit(screen.getWidth(), screen.getHeight(), positionWall, positionSnake);
 			}
-			game.update(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit);
-		}while(game.finish != true);
+			game.update(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit, snake);
+		} while(game.finish != true);
 		
 		switch(game.reason) {
 			case 'a':

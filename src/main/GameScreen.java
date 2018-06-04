@@ -36,7 +36,7 @@ public class GameScreen {
 		System.out.println("snake: " + snake);
 	}
 	
-	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit) { /* Update Gamescreen */
+	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit, Snake snake) { /* Update Gamescreen */
 		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
 
 		/* Zusammenfügen der drei ArrayLists in eine char Matrix */
@@ -59,8 +59,8 @@ public class GameScreen {
 							reason = 'a';
 						}
 						if(gameScreen[i][j] == Fruit.getSymbol()) {
-							// TODO: Snake +1 & New Fruit
 							fruitHit = true;
+							snake.move(fruitHit);
 						}
 						
 						gameScreen[i][j] = Snake.getSymbol();

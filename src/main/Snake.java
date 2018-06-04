@@ -10,7 +10,7 @@ public class Snake extends GameObject {
 	private static int startX;
 	private static int startY;
 	private static char symbol = 'O';
-	
+
 	public Snake(int width, int height, ArrayList<int[]> positionWall) { /* Konstruktor der Snake */
 		startX = width / 2;
 		startY = height / 2;
@@ -25,33 +25,52 @@ public class Snake extends GameObject {
 				TimeUnit.MILLISECONDS.sleep(250);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			} 
+			}
 			char direction = IO.readChar();
 			if (direction == 'w') {
 				if (this.getMovingDir() != 's') {
 					this.setMovingDir('w');
 				}
-			}
-			if (direction == 'a') {
+			} else if (direction == 'a') {
 				if (this.getMovingDir() != 'd') {
 					this.setMovingDir('a');
 				}
-			}
-			if (direction == 's') {
+			} else if (direction == 's') {
 				if (this.getMovingDir() != 'w') {
 					this.setMovingDir('s');
 				}
-			}
-			if (direction == 'd') {
+			} else if (direction == 'd') {
 				if (this.getMovingDir() != 'a') {
 					this.setMovingDir('d');
 				}
 			}
 		}
 	}
-	
-	private void move() { /* TODO: Snake soll sich in gewünschte Richtung bewegen + position muss geupdated werden */
-		
+
+	/**
+	 * Moves the snake
+	 * @param boolean fruitHit Checks if snake ate fruit
+	 */
+	public void move(boolean fruitHit) {
+		int[] oldPosition = position.get(0);
+		int[] newPosition = new int[2];
+		if (this.getMovingDir() == 'w') {
+			newPosition[0] = oldPosition[0] - 1;
+			newPosition[1] = oldPosition[1];
+		} else if (this.getMovingDir() == 'a') {
+			newPosition[0] = oldPosition[0];
+			newPosition[1] = oldPosition[1] - 1;
+		} else if (this.getMovingDir() == 's') {
+			newPosition[0] = oldPosition[0] + 1;
+			newPosition[1] = oldPosition[1];
+		} else if (this.getMovingDir() == 'd') {
+			newPosition[0] = oldPosition[0];
+			newPosition[1] = oldPosition[1] + 1;
+		}
+		position.add(0, newPosition);
+		if (!fruitHit) {
+			position.remove(position.size() - 1);
+		}
 	}
 
 	public boolean isRunning() {
@@ -77,19 +96,19 @@ public class Snake extends GameObject {
 	public static void setSymbol(char symbol) {
 		Snake.symbol = symbol;
 	}
-	
-	public ArrayList<int[]> getSchlange(){
+
+	public ArrayList<int[]> getSchlange() {
 		return position;
-		
+
 	}
-	
+
 	public void showSnake() { /* Genaue Koordinaten Ausgabe von der Schlange */
-		 for(int i = 0; i < position.size(); i++) {
-			 System.out.print((i + 1) + ". S: ");
-			for(int j = 0; j < 2; j++) {
-				System.out.print(position.get(i)[j] + " ");		
+		for (int i = 0; i < position.size(); i++) {
+			System.out.print((i + 1) + ". S: ");
+			for (int j = 0; j < 2; j++) {
+				System.out.print(position.get(i)[j] + " ");
 			}
 			System.out.println();
-		 }
+		}
 	}
 }
