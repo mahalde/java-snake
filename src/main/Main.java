@@ -34,9 +34,23 @@ public class Main {
 			positionWall = wall.getWand();
 			positionSnake = snake.getSchlange();
 			positionFruit = fruit.getFrucht();
+			if(game.fruitHit == true) {
+				fruit.createFruit(screen.getWidth(), screen.getHeight(), positionWall, positionSnake);
+			}
 			game.update(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit);
 		}while(game.finish != true);
 		
+		switch(game.reason) {
+			case 'a':
+				System.out.println("Du bist gegen eine Wand gelaufen!");
+				break;
+			case 'b':
+				System.out.println("Spiel durch Code abgebrochen!");
+				break;
+			default:
+				System.out.println("Spielabbruch: Unerwarteter Fehler!");
+				break;
+		}
 		
 //		game.checkVariables(screen.getWidth(), screen.getHeight());
 	}

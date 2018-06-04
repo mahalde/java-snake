@@ -14,6 +14,9 @@ public class Fruit extends GameObject {
 	
 	public void createFruit(int width, int height, ArrayList<int[]> positionWand, ArrayList<int[]> positionSnake) { /* Erstellen der Fruit in ArrayList */
 	
+		if(!position.isEmpty()) {
+			position.remove(coordinate);	
+		}
 		boolean readyWall = false;
 		boolean readySnake = false;
 		int randomHeight;
