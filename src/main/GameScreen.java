@@ -81,8 +81,8 @@ public class GameScreen {
 			}
 		}
 
-		reason = 'b';
-		finish = true;
+//		reason = 'b';
+//		finish = true;
 		show(gameScreen);
 	}
 
