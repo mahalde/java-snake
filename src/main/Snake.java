@@ -11,15 +11,15 @@ public class Snake extends GameObject {
 	private static int startY;
 	private static char symbol = 'O';
 	
-	public Snake(int width, int height, ArrayList<int[]> positionWall) {
+	public Snake(int width, int height, ArrayList<int[]> positionWall) { /* Konstruktor der Snake */
 		startX = width / 2;
 		startY = height / 2;
-		coordinate[0] = startX;
-		coordinate[1] = startY;
+		coordinate[0] = startY;
+		coordinate[1] = startX;
 		position.add(coordinate);
 	}
 
-	public void keyReader() {
+	public void keyReader() { /* KeyReader um die Richtung der Schlange zu bestimmen */
 		while (running) {
 			try {
 				TimeUnit.MILLISECONDS.sleep(250);
@@ -50,7 +50,7 @@ public class Snake extends GameObject {
 		}
 	}
 	
-	private void move() {
+	private void move() { /* TODO: Snake soll sich in gewünschte Richtung bewegen + position muss geupdated werden */
 		
 	}
 
@@ -83,9 +83,7 @@ public class Snake extends GameObject {
 		
 	}
 	
-	public void showSnake() {
-		
-		/* Genaue Koordinaten Ausgabe von der Schlange */
+	public void showSnake() { /* Genaue Koordinaten Ausgabe von der Schlange */
 		 for(int i = 0; i < position.size(); i++) {
 			 System.out.print((i + 1) + ". S: ");
 			for(int j = 0; j < 2; j++) {

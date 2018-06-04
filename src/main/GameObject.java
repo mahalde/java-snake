@@ -8,7 +8,7 @@ public class GameObject {
 	int[] coordinate = new int[2]; /* x & y Koordinaten */
 	ArrayList<int[]> position = new ArrayList<int[]>(); /* ArrayList, 2 dimensional dargestellt durch int-Array */
 	
-	public GameObject() {
+	public GameObject() { /* Konstruktor des GameObjects */
 		
 	}
 

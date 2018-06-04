@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Wall extends GameObject{
 	private static char symbol = '#';
 	
-	Wall(int width, int height){
+	Wall(int width, int height){ /* Konstruktor der Wall */
 		super();
 		createWall(width, height);
 	}
 
-	public void createWall(int width, int height) {
+	public void createWall(int width, int height) { /* Erstellt die Wand in der ArrayList position */
 		int x = 1;
 		int y = 1;
 		for(int zaehler = 0; zaehler < height; zaehler++) {
@@ -46,9 +46,7 @@ public class Wall extends GameObject{
 		return position;
 	}
 	
-	public void showWall() {
-		
-		/* Genaue Koordinaten Ausgabe von der Wand */
+	public void showWall() { /* Genaue Koordinaten Ausgabe von der Wand */
 		 for(int i = 0; i < position.size(); i++) {
 			 System.out.print((i + 1) + ". W: ");
 			for(int j = 0; j < 2; j++) {
