@@ -21,11 +21,11 @@ public class Fruit extends GameObject {
 		boolean readySnake = false;
 		int randomHeight;
 		int randomWidth;
-		do { /* Nimmt sich zwei Zufallszahlen und dann wird gepr�ft, ob sich dort eine Wall oder Snake befindet, sonst nimmt er zwei neue Zahlen... */
-			randomHeight = 0 + (int) Math.floor(Math.random()*(height)); /* Nimmt eine Zufallszahl zwischen 0 & Height - 1 */
-			randomWidth = 0 + (int) Math.floor(Math.random()*(width)); /* Nimmt eine Zufallszahl zwischen 0 & Width - 1 */
+		do { /* Nimmt sich zwei Zufallszahlen und dann wird geprueft, ob sich dort eine Wall oder Snake befindet, sonst nimmt er zwei neue Zahlen... */
+			randomHeight = 1 + (int) Math.floor(Math.random()*(height - 1)); /* Nimmt eine Zufallszahl zwischen 0 & Height - 1 */
+			randomWidth = 1 + (int) Math.floor(Math.random()*(width - 1)); /* Nimmt eine Zufallszahl zwischen 0 & Width - 1 */
 			for(int i = 0; i < (positionWand.size() - 1); i++) {
-				if(randomHeight == positionWand.get(i)[0] && randomWidth == positionWand.get(i)[1]) { /* Pr�ft, ob die RandomKoordinate einer WandKoordinate endspricht */
+				if(randomHeight == positionWand.get(i)[0] && randomWidth == positionWand.get(i)[1]) { /* Prueft, ob die RandomKoordinate einer WandKoordinate endspricht */
 					readyWall = false;
 					break;
 				}
@@ -34,7 +34,7 @@ public class Fruit extends GameObject {
 				}
 			}
 			for(int i = 0; i < (positionSnake.size() - 1); i++) {
-				if(randomHeight == positionSnake.get(i)[0] && randomWidth == positionSnake.get(i)[1]) { /* Pr�ft, ob die RandomKoordinate einer SchlangenKoordinate entspricht */
+				if(randomHeight == positionSnake.get(i)[0] && randomWidth == positionSnake.get(i)[1]) { /* Prueft, ob die RandomKoordinate einer SchlangenKoordinate entspricht */
 					readySnake = false;
 					break;
 				}
@@ -44,8 +44,8 @@ public class Fruit extends GameObject {
 			}
 		} while(readyWall != true && readySnake != true);
 
-		this.coordinate[0] = randomHeight; /* Schreibt die Zufallszahl in das Array */
-		this.coordinate[1] = randomWidth; /* Schreibt die Zufallszahl in das Array */
+		coordinate[0] = randomHeight; /* Schreibt die Zufallszahl in das Array */
+		coordinate[1] = randomWidth; /* Schreibt die Zufallszahl in das Array */
 		position.add(coordinate); /* Koordinaten der Frucht im Zweidimensionalen Array, wobei es nur 2 Spalten geben kann aber unendlich Zeilen */
 		}
 	

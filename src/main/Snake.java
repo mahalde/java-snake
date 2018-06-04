@@ -1,5 +1,8 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -17,40 +20,44 @@ public class Snake extends GameObject {
 		coordinate[0] = startY;
 		coordinate[1] = startX;
 		position.add(coordinate);
-		this.keyReader();
 	}
 
-	public void keyReader() { /* KeyReader um die Richtung der Schlange zu bestimmen */
-//		while (running) {
-//			try {
-//				TimeUnit.MILLISECONDS.sleep(250);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-			char direction = IO.readChar();
-			if (direction == 'w') {
-				if (this.getMovingDir() != 's') {
-					this.setMovingDir('w');
-				}
-			} else if (direction == 'a') {
-				if (this.getMovingDir() != 'd') {
-					this.setMovingDir('a');
-				}
-			} else if (direction == 's') {
-				if (this.getMovingDir() != 'w') {
-					this.setMovingDir('s');
-				}
-			} else if (direction == 'd') {
-				if (this.getMovingDir() != 'a') {
-					this.setMovingDir('d');
-				}
+	public void keyReader() throws IOException { /* KeyReader um die Richtung der Schlange zu bestimmen */
+		String directionString = Character.toString(getMovingDir());
+
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		long startTime = System.currentTimeMillis();
+		while ((System.currentTimeMillis() - startTime) < 1000 && !in.ready()) {
+		}
+		if (in.ready()) {
+			directionString = in.readLine();
+		}
+
+		char direction = directionString.charAt(0);
+		if (direction == 'w') {
+			if (this.getMovingDir() != 's') {
+				this.setMovingDir('w');
 			}
-//		}
+		} else if (direction == 'a') {
+			if (this.getMovingDir() != 'd') {
+				this.setMovingDir('a');
+			}
+		} else if (direction == 's') {
+			if (this.getMovingDir() != 'w') {
+				this.setMovingDir('s');
+			}
+		} else if (direction == 'd') {
+			if (this.getMovingDir() != 'a') {
+				this.setMovingDir('d');
+			}
+		}
 	}
 
 	/**
 	 * Moves the snake
-	 * @param boolean fruitHit Checks if snake ate fruit
+	 * 
+	 * @param boolean
+	 *            fruitHit Checks if snake ate fruit
 	 */
 	public void move(boolean fruitHit) {
 		int[] oldPosition = position.get(0);
