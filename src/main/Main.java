@@ -47,6 +47,9 @@ public class Main {
 			case 'b':
 				System.out.println("Spiel durch Code abgebrochen!");
 				break;
+			case 'c':
+				System.out.println("Du bist gegen deine Schlange gelaufen!");
+				break;
 			default:
 				System.out.println("Spielabbruch: Unerwarteter Fehler!");
 				break;

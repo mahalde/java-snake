@@ -5,60 +5,87 @@ import main.IO;
 import main.Snake;
 import main.Wall;
 
-public class Settings{
+public class Settings {
 	private int height = 15;
 	private int width = 15;
 	private int change = 0;
-	
+
 	public Settings() {
 
 	}
 
-	public void show() {	
+	public void show() {
 		this.showSettings();
-		System.out.println("1. Höhe: " + this.height);
+		System.out.println("1. Hï¿½he: " + this.height);
 		System.out.println("2. Breite: " + this.width);
 		System.out.println("3. Schlangensymbol: " + Snake.getSymbol());
 		System.out.println("4. Wandsymbol: " + Wall.getSymbol());
 		System.out.println("5. Fruchtsymbol: " + Fruit.getSymbol());
 		System.out.println("6. Verlassen");
 	}
-	
+
 	public void aendern() {
 		show(); /* Zeigt die Einstellungen */
 		do {
-			change = IO.readInt("Was möchten Sie ändern: ");
-		} while(change < 1 || change > 6); /* Begrenzungsabfrage */
-		
-		switch(change) {
-		case 1: /* Höhe ändern */
+			change = IO.readInt("Was mï¿½chten Sie ï¿½ndern: ");
+		} while (change < 1 || change > 6); /* Begrenzungsabfrage */
+
+		switch (change) {
+		case 1: /* Hï¿½he ï¿½ndern */
 			do {
-				this.setHeight(IO.readInt("Neue Höhe(10 - 30): "));
-			}while(this.getHeight() < 10 || this.getHeight() > 30); /* Begrenzungsabfrage */
-			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
+				this.setHeight(IO.readInt("Neue Hï¿½he(10 - 30): "));
+			} while (this.getHeight() < 10 || this.getHeight() > 30); /* Begrenzungsabfrage */
+			aendern(); /* Rekursion zur Anzeige des ï¿½nderungsdialogs der Einstellungen */
 			break;
-		case 2: /* Breite ändern */
+		case 2: /* Breite ï¿½ndern */
 			do {
 				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
-			}while(this.getWidth() < 10 || this.getWidth() > 30); /* Begrenzungsabfrage */
-			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
+			} while (this.getWidth() < 10 || this.getWidth() > 30); /* Begrenzungsabfrage */
+			aendern(); /* Rekursion zur Anzeige des ï¿½nderungsdialogs der Einstellungen */
 			break;
-		case 3: /* Schlangensymbol ändern */
-			Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
-			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
+		case 3: /* Schlangensymbol ï¿½ndern */
+			do {
+				Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
+				if (Snake.getSymbol() == Wall.getSymbol() || Snake.getSymbol() == Fruit.getSymbol()) {
+					System.out.println("Die Spielobjektsymbole dï¿½rfen nicht gleich sein!");
+				}
+				if (Snake.getSymbol() == ' ') {
+					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
+				}
+			} while (Snake.getSymbol() == Wall.getSymbol() || Snake.getSymbol() == Fruit.getSymbol() || Snake.getSymbol() == ' ');
+			aendern(); /* Rekursion zur Anzeige des ï¿½nderungsdialogs der Einstellungen */
 			break;
-		case 4: /* Wandsymbol ändern */
-			Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
-			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
+		case 4: /* Wandsymbol ï¿½ndern */
+			do {
+				Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
+				if (Wall.getSymbol() == Snake.getSymbol() || Wall.getSymbol() == Fruit.getSymbol()) {
+					System.out.println("Die Spielobjektsymbole dï¿½rfen nicht gleich sein!");
+				}
+				if (Wall.getSymbol() == ' ') {
+					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
+				}
+			} while (Wall.getSymbol() == Snake.getSymbol() || Wall.getSymbol() == Fruit.getSymbol() || Wall.getSymbol() == ' ');
+			aendern(); /* Rekursion zur Anzeige des ï¿½nderungsdialogs der Einstellungen */
 			break;
-		case 5: /* Fruchtsymbol ändern */
-			Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
-			aendern(); /* Rekursion zur Anzeige des Änderungsdialogs der Einstellungen */
+		case 5: /* Fruchtsymbol ï¿½ndern */
+			do {
+				Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
+				if (Fruit.getSymbol() == Snake.getSymbol() || Fruit.getSymbol() == Wall.getSymbol()) {
+					System.out.println("Die Spielobjektsymbole dï¿½rfen nicht gleich sein!");
+				}
+				if (Fruit.getSymbol() == ' ') {
+					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
+				}
+			} while (Fruit.getSymbol() == Snake.getSymbol() || Fruit.getSymbol() == Wall.getSymbol() || Fruit.getSymbol() == ' ');
+			aendern(); /* Rekursion zur Anzeige des ï¿½nderungsdialogs der Einstellungen */
 			break;
-		default: /* Dadurch das nichts ausgeführt wird, kehrt er zum TitleScreen zurück. */
-			break; /* Es ist nicht möglich, show() & aenderen() danach einzufügen, da er sonst nicht zum TitleScreen zurückkehrt */
+		default: /* Dadurch das nichts ausgefï¿½hrt wird, kehrt er zum TitleScreen zurï¿½ck. */
+			break; /*
+					 * Es ist nicht mï¿½glich, show() & aenderen() danach einzufï¿½gen, da er sonst
+					 * nicht zum TitleScreen zurï¿½ckkehrt
+					 */
 		}
-		
+
 	}
 
 	public int getHeight() {
@@ -76,7 +103,7 @@ public class Settings{
 	public void setWidth(int width) {
 		this.width = width;
 	}
-	
+
 	public int getChange() {
 		return change;
 	}
@@ -85,8 +112,7 @@ public class Settings{
 		this.change = change;
 	}
 
-	
-	void showSettings(){ /* Zeigt den Einstellungsschriftzug */
+	void showSettings() { /* Zeigt den Einstellungsschriftzug */
 		System.out.println("  ______ _           _       _ _                              ");
 		System.out.println(" |  ____(_)         | |     | | |                             ");
 		System.out.println(" | |__   _ _ __  ___| |_ ___| | |_   _ _ __   __ _  ___ _ __  ");

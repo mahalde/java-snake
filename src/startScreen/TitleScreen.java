@@ -30,7 +30,6 @@ public class TitleScreen {
 			break;
 		case 2: /* Einstellungen */
 			do {
-				settings.show(); /* Zeigt die Einstellungen an */
 				settings.aendern(); /* Öffnet den Änderungsdialog der Einstellungen */
 			}while(settings.getChange() != 6); /* Führt die Einstellungen solange aus, solange der User die Einstellungen nicht verlässt (6 = Verlassen) */
 

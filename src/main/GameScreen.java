@@ -3,30 +3,34 @@ package main;
 import java.util.ArrayList;
 
 public class GameScreen {
-	
+
 	boolean finish = false; /* Boolean, um zu checken ob das Spiel fertig ist */
 	char reason;
 	boolean fruitHit = false;
-	
-	public GameScreen(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit){ /* Konstruktor des GameScreen | Bekommt die Settings übergeben, statt das sie neu gezogen werden müssen */
+
+	public GameScreen(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake,
+			ArrayList<int[]> positionFruit) { /*
+												 * Konstruktor des GameScreen | Bekommt die Settings ï¿½bergeben, statt
+												 * das sie neu gezogen werden mï¿½ssen
+												 */
 		char fruit = Fruit.getSymbol();
 		char wall = Wall.getSymbol();
 		char snake = Snake.getSymbol();
 
-//		 checkVariables(width, height); /* Funktioniert soweit */
+		// checkVariables(width, height); /* Funktioniert soweit */
 	}
-	
+
 	public void show(char[][] gameScreen) { /* Visuelle Anzeige des GameScreen */
-		for(int i = 0; i < gameScreen.length; i++) {
-			for(int j = 0; j < gameScreen[0].length; j++) {
-				System.out.print(gameScreen[i][j]);
+		for (int i = 0; i < gameScreen.length; i++) {
+			for (int j = 0; j < gameScreen[0].length; j++) {
+				System.out.print(gameScreen[i][j] + " ");
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public void checkVariables(int width, int height) { /* Util Methode, um die Variablen zu checken */
-		System.out.println("Höhe: " + height);
+		System.out.println("Hï¿½he: " + height);
 		System.out.println("Breite: " + width);
 		char fruit = Fruit.getSymbol();
 		char wall = Wall.getSymbol();
@@ -39,22 +43,26 @@ public class GameScreen {
 	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit, Snake snake) { /* Update Gamescreen */
 		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
 
-		/* Zusammenfügen der drei ArrayLists in eine char Matrix */
-		for(int i = 0; i < height; i++) {
-			for(int j = 0; j < width; j++) {
-				for(int iWall = 0; iWall < positionWall.size(); iWall++) {
-					if(i == positionWall.get(iWall)[0] && j == positionWall.get(iWall)[1]) {
+	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake,
+		ArrayList<int[]> positionFruit) { /* Update Gamescreen */
+		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
+		fruitHit = false;
+		/* Zusammenfï¿½gen der drei ArrayLists in eine char Matrix */
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				for (int iWall = 0; iWall < positionWall.size(); iWall++) { /* Schleife ï¿½ber die Position der Wand */
+					if (i == positionWall.get(iWall)[0] && j == positionWall.get(iWall)[1]) {
 						gameScreen[i][j] = Wall.getSymbol();
 					}
 				}
-				for(int iFruit = 0; iFruit < positionFruit.size(); iFruit++) {
-					if(i == positionFruit.get(iFruit)[0] && j == positionFruit.get(iFruit)[1]) {
+				for (int iFruit = 0; iFruit < positionFruit.size(); iFruit++) { /* Schleife ï¿½ber die Position der Frucht */
+					if (i == positionFruit.get(iFruit)[0] && j == positionFruit.get(iFruit)[1]) {
 						gameScreen[i][j] = Fruit.getSymbol();
 					}
 				}
-				for(int iSnake = 0; iSnake < positionSnake.size(); iSnake++) {
-					if(i == positionSnake.get(iSnake)[0] && j == positionSnake.get(iSnake)[1]) {
-						if(gameScreen[i][j] == Wall.getSymbol()) {
+				for (int iSnake = 0; iSnake < positionSnake.size(); iSnake++) { /* Schleife ï¿½ber die Position der Schlange */
+					if (i == positionSnake.get(iSnake)[0] && j == positionSnake.get(iSnake)[1]) { /* Prï¿½ft, ob die Schlange in eine Wand lï¿½uft */
+						if (gameScreen[i][j] == Wall.getSymbol()) {
 							finish = true;
 							reason = 'a';
 						}
@@ -62,16 +70,23 @@ public class GameScreen {
 							fruitHit = true;
 							snake.move(fruitHit);
 						}
-						
+						if (positionSnake.get(iSnake)[0] == positionSnake.get(0)[0] /* Prï¿½ft, ob die Schlange in sich selbst lï¿½uft */
+								&& positionSnake.get(iSnake)[1] == positionSnake.get(0)[1]) {
+							if(iSnake != 0) {
+								finish = true;
+								reason = 'c';
+							}
+						}
+
 						gameScreen[i][j] = Snake.getSymbol();
 					}
 				}
 			}
 		}
-		
+
 		reason = 'b';
 		finish = true;
-		show(gameScreen); 
+		show(gameScreen);
 	}
-	
+
 }
