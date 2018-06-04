@@ -13,15 +13,11 @@ public class GameScreen {
 												 * Konstruktor des GameScreen | Bekommt die Settings uebergeben, statt
 												 * das sie neu gezogen werden muessen
 												 */
-		char fruit = Fruit.getSymbol();
-		char wall = Wall.getSymbol();
-		char snake = Snake.getSymbol();
 
-		// checkVariables(width, height); /* Funktioniert soweit */
 	}
 
 	public void show(char[][] gameScreen) { /* Visuelle Anzeige des GameScreen */
-		for(int i = 0; i < 50; i++) {
+		for (int i = 0; i < 50; i++) {
 			System.out.println();
 		}
 		for (int i = 0; i < gameScreen.length; i++) {
@@ -42,9 +38,9 @@ public class GameScreen {
 		System.out.println("wall: " + wall);
 		System.out.println("snake: " + snake);
 	}
-	
+
 	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake,
-		ArrayList<int[]> positionFruit, Snake snake) { /* Update Gamescreen */
+			ArrayList<int[]> positionFruit, Snake snake) { /* Update Gamescreen */
 		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
 		snake.move(fruitHit);
 		fruitHit = false;
@@ -56,23 +52,29 @@ public class GameScreen {
 						gameScreen[i][j] = Wall.getSymbol();
 					}
 				}
-				for (int iFruit = 0; iFruit < positionFruit.size(); iFruit++) { /* Schleife ueber die Position der Frucht */
+				for (int iFruit = 0; iFruit < positionFruit
+						.size(); iFruit++) { /* Schleife ueber die Position der Frucht */
 					if (i == positionFruit.get(iFruit)[0] && j == positionFruit.get(iFruit)[1]) {
 						gameScreen[i][j] = Fruit.getSymbol();
 					}
 				}
-				for (int iSnake = 0; iSnake < positionSnake.size(); iSnake++) { /* Schleife ueber die Position der Schlange */
-					if (i == positionSnake.get(iSnake)[0] && j == positionSnake.get(iSnake)[1]) { /* Prueft, ob die Schlange in eine Wand laeuft */
+				for (int iSnake = 0; iSnake < positionSnake
+						.size(); iSnake++) { /* Schleife ueber die Position der Schlange */
+					if (i == positionSnake.get(iSnake)[0]
+							&& j == positionSnake.get(iSnake)[1]) { /* Prueft, ob die Schlange in eine Wand laeuft */
 						if (gameScreen[i][j] == Wall.getSymbol()) {
 							finish = true;
 							reason = 'a';
 						}
-						if(gameScreen[i][j] == Fruit.getSymbol()) {
+						if (gameScreen[i][j] == Fruit.getSymbol()) {
 							fruitHit = true;
 						}
-						if (positionSnake.get(iSnake)[0] == positionSnake.get(0)[0] /* Prueft, ob die Schlange in sich selbst laeuft */
+						if (positionSnake.get(iSnake)[0] == positionSnake.get(0)[0] /*
+																					 * Prueft, ob die Schlange in sich
+																					 * selbst laeuft
+																					 */
 								&& positionSnake.get(iSnake)[1] == positionSnake.get(0)[1]) {
-							if(iSnake != 0) {
+							if (iSnake != 0) {
 								finish = true;
 								reason = 'c';
 							}
@@ -84,9 +86,8 @@ public class GameScreen {
 			}
 		}
 
-
-//		reason = 'b';
-//		finish = true;
+		// reason = 'b';
+		// finish = true;
 		show(gameScreen);
 	}
 
