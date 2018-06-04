@@ -40,11 +40,8 @@ public class GameScreen {
 		System.out.println("snake: " + snake);
 	}
 	
-	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake, ArrayList<int[]> positionFruit, Snake snake) { /* Update Gamescreen */
-		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
-
 	public void update(int width, int height, ArrayList<int[]> positionWall, ArrayList<int[]> positionSnake,
-		ArrayList<int[]> positionFruit) { /* Update Gamescreen */
+		ArrayList<int[]> positionFruit, Snake snake) { /* Update Gamescreen */
 		char[][] gameScreen = new char[height][width]; /* Spielfeld Matrix mit Symbolen */
 		fruitHit = false;
 		/* Zusammenf�gen der drei ArrayLists in eine char Matrix */
