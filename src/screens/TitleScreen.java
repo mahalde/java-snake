@@ -51,7 +51,7 @@ public class TitleScreen {
 				return; /* Beendet das Spiel */
 			}
 			else {
-				show();
+				this.show();
 			}
 		}
 	}

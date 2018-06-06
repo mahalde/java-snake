@@ -28,7 +28,7 @@ public class GameScreen {
 		}
 	}
 
-	public void checkVariables(int width, int height) { /* Util Methode, um die Variablen zu checken */
+	public void _checkVariables(int width, int height) { /* Util Methode, um die Variablen zu checken */
 		System.out.println("Hoehe: " + height);
 		System.out.println("Breite: " + width);
 		char fruit = Fruit.getSymbol();

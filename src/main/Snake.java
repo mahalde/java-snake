@@ -55,8 +55,7 @@ public class Snake extends GameObject {
 	/**
 	 * Moves the snake
 	 * 
-	 * @param boolean
-	 *            fruitHit Checks if snake ate fruit
+	 * @param fruitHit Checks if snake ate fruit
 	 */
 	public void move(boolean fruitHit) {
 		int[] oldPosition = position.get(0);
