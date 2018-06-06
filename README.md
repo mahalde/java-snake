@@ -1,5 +1,9 @@
 # java-snake
-A console implementation of the game "Snake" in Java
+Dies ist unser Spiel "Snake" in der Konsole. Am Anfang können Voreinstellungen getroffen werden,
+wenn man zu dem "Einstellungs"-Bildschirm navigiert, können Größe und Symbole eingestellt werden.
+Danach kann man das Spiel starten, man navigiert die Schlange, indem man die Richtung('w', 'a', 's' oder 'd')
+eingibt und mit 'Enter' bestätigt. Die Schlange wird ab bestimmten Punktanzahlen schneller.
+
 
 - main Package
 	- Fruit.java
@@ -34,15 +38,20 @@ A console implementation of the game "Snake" in Java
 
 
 - startScreen Package
-	- Credits.java
-		In der "Credits.java" entsteht lediglich ein Text,
+	- CreditScreen.java
+		In der "CreditScreen.java" entsteht lediglich ein Text,
 		der die Credits zu den Entwicklern anzeigt.
+
+	- EndScreen.java
+		In der "EndScreen.java" entsteht alles zum Objekt Endbildschirm.
+		In dieser Klasse wird der Endbildschirm ausgegeben, wenn das Spiel beendet wurde.
+		Dabei werden verschiedene Gründe und die Punktzahl ausgegeben.
 	
-	- Settings.java
-		In der "Settings.java" ensteht alles zu den Einstellungen des Spiels, bis auf die Symbole.
-		Dort kÃ¶nnen vor Spielbeginn die Einstellungen getroffen werden, wie HÃ¶he und Breite des Spielfeldes 
+	- SettingsScreen.java
+		In der "SettingsScreen.java" ensteht alles zu den Einstellungen des Spiels, bis auf die Symbole.
+		Dort koennen vor Spielbeginn die Einstellungen getroffen werden, wie HÃ¶he und Breite des Spielfeldes 
 		oder Symbole der einzelnen Spielobjekte. 
 	
-	- Titlescreen.java
-		In der "Titlescreen.java" entsteht alles zum Objekt Titelbildschirm.
-		Diese Klasse ist zum Navigieren zu den vier MÃ¶glichkeiten: Start, Einstellungen, Credits und Beenden.
+	- TitleScreen.java
+		In der "TitleScreen.java" entsteht alles zum Objekt Titelbildschirm.
+		Diese Klasse ist zum Navigieren zu den vier Moeglichkeiten: Start, Einstellungen, Credits und Beenden.
