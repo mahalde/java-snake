@@ -3,7 +3,7 @@ package main;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import startScreen.TitleScreen;
+import screens.TitleScreen;
 
 public class Main {
 	

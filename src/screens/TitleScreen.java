@@ -1,4 +1,4 @@
-package startScreen;
+package screens;
 
 import java.util.concurrent.TimeUnit;
 

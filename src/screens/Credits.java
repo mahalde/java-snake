@@ -1,4 +1,4 @@
-package startScreen;
+package screens;
 
 public class Credits {
 	public Credits() {

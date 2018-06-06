@@ -1,4 +1,4 @@
-package startScreen;
+package screens;
 
 import main.Fruit;
 import main.IO;
