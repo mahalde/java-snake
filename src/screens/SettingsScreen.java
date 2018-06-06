@@ -27,62 +27,62 @@ public class SettingsScreen {
 	public void aendern() {
 		show(); /* Zeigt die Einstellungen */
 		do {
-			change = IO.readInt("Was m�chten Sie �ndern: ");
+			change = IO.readInt("Was moechten Sie aendern: ");
 		} while (change < 1 || change > 6); /* Begrenzungsabfrage */
 
 		switch (change) {
-		case 1: /* H�he �ndern */
+		case 1: /* Hoehe aendern */
 			do {
-				this.setHeight(IO.readInt("Neue H�he(10 - 30): "));
+				this.setHeight(IO.readInt("Neue Hoehe(10 - 30): "));
 			} while (this.getHeight() < 10 || this.getHeight() > 30); /* Begrenzungsabfrage */
-			aendern(); /* Rekursion zur Anzeige des �nderungsdialogs der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
-		case 2: /* Breite �ndern */
+		case 2: /* Breite aendern */
 			do {
 				this.setWidth(IO.readInt("Neue Breite(10 - 30): "));
 			} while (this.getWidth() < 10 || this.getWidth() > 30); /* Begrenzungsabfrage */
-			aendern(); /* Rekursion zur Anzeige des �nderungsdialogs der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Aederungsdialogs der Einstellungen */
 			break;
-		case 3: /* Schlangensymbol �ndern */
+		case 3: /* Schlangensymbol aendern */
 			do {
 				Snake.setSymbol(IO.readChar("Neues Schlangensymbol: "));
 				if (Snake.getSymbol() == Wall.getSymbol() || Snake.getSymbol() == Fruit.getSymbol()) {
-					System.out.println("Die Spielobjektsymbole d�rfen nicht gleich sein!");
+					System.out.println("Die Spielobjektsymbole duerfen nicht gleich sein!");
 				}
 				if (Snake.getSymbol() == ' ') {
 					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
 				}
 			} while (Snake.getSymbol() == Wall.getSymbol() || Snake.getSymbol() == Fruit.getSymbol() || Snake.getSymbol() == ' ');
-			aendern(); /* Rekursion zur Anzeige des �nderungsdialogs der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
-		case 4: /* Wandsymbol �ndern */
+		case 4: /* Wandsymbol aendern */
 			do {
 				Wall.setSymbol(IO.readChar("Neues Wandsymbol: "));
 				if (Wall.getSymbol() == Snake.getSymbol() || Wall.getSymbol() == Fruit.getSymbol()) {
-					System.out.println("Die Spielobjektsymbole d�rfen nicht gleich sein!");
+					System.out.println("Die Spielobjektsymbole duerfen nicht gleich sein!");
 				}
 				if (Wall.getSymbol() == ' ') {
 					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
 				}
 			} while (Wall.getSymbol() == Snake.getSymbol() || Wall.getSymbol() == Fruit.getSymbol() || Wall.getSymbol() == ' ');
-			aendern(); /* Rekursion zur Anzeige des �nderungsdialogs der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
-		case 5: /* Fruchtsymbol �ndern */
+		case 5: /* Fruchtsymbol andern */
 			do {
 				Fruit.setSymbol(IO.readChar("Neues Fruchtsymbol: "));
 				if (Fruit.getSymbol() == Snake.getSymbol() || Fruit.getSymbol() == Wall.getSymbol()) {
-					System.out.println("Die Spielobjektsymbole d�rfen nicht gleich sein!");
+					System.out.println("Die Spielobjektsymbole duerfen nicht gleich sein!");
 				}
 				if (Fruit.getSymbol() == ' ') {
 					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
 				}
 			} while (Fruit.getSymbol() == Snake.getSymbol() || Fruit.getSymbol() == Wall.getSymbol() || Fruit.getSymbol() == ' ');
-			aendern(); /* Rekursion zur Anzeige des �nderungsdialogs der Einstellungen */
+			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
-		default: /* Dadurch das nichts ausgef�hrt wird, kehrt er zum TitleScreen zur�ck. */
+		default: /* Dadurch das nichts ausgefuehrt wird, kehrt er zum TitleScreen zurueck. */
 			break; /*
-					 * Es ist nicht m�glich, show() & aenderen() danach einzuf�gen, da er sonst
-					 * nicht zum TitleScreen zur�ckkehrt
+					 * Es ist nicht moeglich, show() & aenderen() danach einzufuegen, da er sonst
+					 * nicht zum TitleScreen zurueckkehrt
 					 */
 		}
 

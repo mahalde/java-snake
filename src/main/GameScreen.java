@@ -16,10 +16,11 @@ public class GameScreen {
 
 	}
 
-	public void show(char[][] gameScreen) { /* Visuelle Anzeige des GameScreen */
+	public void show(char[][] gameScreen, int snakeLength) { /* Visuelle Anzeige des GameScreen */
 		for (int i = 0; i < 50; i++) {
 			System.out.println();
 		}
+		System.out.println("Punkte: " + snakeLength);
 		for (int i = 0; i < gameScreen.length; i++) {
 			for (int j = 0; j < gameScreen[0].length; j++) {
 				System.out.print(gameScreen[i][j] + " ");
@@ -85,10 +86,10 @@ public class GameScreen {
 				}
 			}
 		}
-
+		
 		// reason = 'b';
 		// finish = true;
-		show(gameScreen);
+		show(gameScreen, snake.getPosition().size());
 	}
 
 }
