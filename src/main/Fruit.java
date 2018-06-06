@@ -19,11 +19,11 @@ public class Fruit extends GameObject {
 		}
 		boolean readyWall = false;
 		boolean readySnake = false;
-		int randomHeight;
-		int randomWidth;
+		int randomHeight = 0;
+		int randomWidth = 0;
 		do { /* Nimmt sich zwei Zufallszahlen und dann wird geprueft, ob sich dort eine Wall oder Snake befindet, sonst nimmt er zwei neue Zahlen... */
-			randomHeight = 1 + (int) Math.floor(Math.random()*(height - 1)); /* Nimmt eine Zufallszahl zwischen 0 & Height - 1 */
-			randomWidth = 1 + (int) Math.floor(Math.random()*(width - 1)); /* Nimmt eine Zufallszahl zwischen 0 & Width - 1 */
+			randomHeight = 1 + (int) Math.floor(Math.random()*(height - 2)); /* Nimmt eine Zufallszahl zwischen 0 & Height - 2 */
+			randomWidth = 1 + (int) Math.floor(Math.random()*(width - 2)); /* Nimmt eine Zufallszahl zwischen 0 & Width - 2 */
 			for(int i = 0; i < (positionWand.size() - 1); i++) {
 				if(randomHeight == positionWand.get(i)[0] && randomWidth == positionWand.get(i)[1]) { /* Prueft, ob die RandomKoordinate einer WandKoordinate endspricht */
 					readyWall = false;
