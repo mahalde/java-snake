@@ -16,7 +16,7 @@ public class SettingsScreen {
 
 	public void show() {
 		this.showSettings();
-		System.out.println("1. H�he: " + this.height);
+		System.out.println("1. Hoehe: " + this.height);
 		System.out.println("2. Breite: " + this.width);
 		System.out.println("3. Schlangensymbol: " + Snake.getSymbol());
 		System.out.println("4. Wandsymbol: " + Wall.getSymbol());
@@ -52,7 +52,8 @@ public class SettingsScreen {
 				if (Snake.getSymbol() == ' ') {
 					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
 				}
-			} while (Snake.getSymbol() == Wall.getSymbol() || Snake.getSymbol() == Fruit.getSymbol() || Snake.getSymbol() == ' ');
+			} while (Snake.getSymbol() == Wall.getSymbol() || Snake.getSymbol() == Fruit.getSymbol()
+					|| Snake.getSymbol() == ' ');
 			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
 		case 4: /* Wandsymbol aendern */
@@ -64,7 +65,8 @@ public class SettingsScreen {
 				if (Wall.getSymbol() == ' ') {
 					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
 				}
-			} while (Wall.getSymbol() == Snake.getSymbol() || Wall.getSymbol() == Fruit.getSymbol() || Wall.getSymbol() == ' ');
+			} while (Wall.getSymbol() == Snake.getSymbol() || Wall.getSymbol() == Fruit.getSymbol()
+					|| Wall.getSymbol() == ' ');
 			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
 		case 5: /* Fruchtsymbol andern */
@@ -76,7 +78,8 @@ public class SettingsScreen {
 				if (Fruit.getSymbol() == ' ') {
 					System.out.println("Das Spielobjektsymbol darf kein Leerzeichen sein!");
 				}
-			} while (Fruit.getSymbol() == Snake.getSymbol() || Fruit.getSymbol() == Wall.getSymbol() || Fruit.getSymbol() == ' ');
+			} while (Fruit.getSymbol() == Snake.getSymbol() || Fruit.getSymbol() == Wall.getSymbol()
+					|| Fruit.getSymbol() == ' ');
 			aendern(); /* Rekursion zur Anzeige des Aenderungsdialogs der Einstellungen */
 			break;
 		default: /* Dadurch das nichts ausgefuehrt wird, kehrt er zum TitleScreen zurueck. */

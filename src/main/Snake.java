@@ -12,6 +12,7 @@ public class Snake extends GameObject {
 	private static int startX;
 	private static int startY;
 	private static char symbol = 'O';
+	private int speed = 1000;
 
 	public Snake(int width, int height, ArrayList<int[]> positionWall) { /* Konstruktor der Snake */
 		startX = width / 2;
@@ -26,13 +27,30 @@ public class Snake extends GameObject {
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		long startTime = System.currentTimeMillis();
-		while ((System.currentTimeMillis() - startTime) < 1000 && !in.ready()) {
+		
+		if (position.size() < 5) { /* Geschwindigkeitseinstellung der Schlange */
+			speed = 750;
+		} else if (position.size() < 15) {
+			speed = 500;
+		} else if (position.size() < 25) {
+			speed = 250;
+		} else{
+			speed = 200;
+		}
+		
+		while ((System.currentTimeMillis() - startTime) < speed && !in.ready()) {
 		}
 		if (in.ready()) {
 			directionString = in.readLine();
 		}
 
-		char direction = directionString.charAt(0);
+			char direction;
+			try {
+				direction = directionString.charAt(0);
+			} catch (Exception e) {
+				direction = this.getMovingDir();
+			}
+
 		if (direction == 'w') {
 			if (this.getMovingDir() != 's') {
 				this.setMovingDir('w');
@@ -50,14 +68,12 @@ public class Snake extends GameObject {
 				this.setMovingDir('d');
 			}
 		}
+		else {
+			this.setMovingDir(this.getMovingDir());
+		}
 	}
 
-	/**
-	 * Moves the snake
-	 * 
-	 * @param fruitHit Checks if snake ate fruit
-	 */
-	public void move(boolean fruitHit) {
+	public void move(boolean fruitHit) { /* Bewegt die Schlange */
 		int[] oldPosition = position.get(0);
 		int[] newPosition = new int[2];
 		if (this.getMovingDir() == 'w') {

@@ -17,7 +17,7 @@ public class Main {
 			screen.show();
 		} while (screen.getSelected() == 2 || screen.getSelected() == 4);
 
-		if (screen.getSelected() == 3) { /* Wenn "Beenden" ausgewählt wurde */
+		if (screen.getSelected() == 3) { /* Wenn "Beenden" ausgewaehlt wurde */
 			return;
 		}
 
@@ -37,9 +37,7 @@ public class Main {
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), positionWall, positionSnake,
 				positionFruit); /* Erstellt ein Objekt des Gamescreen */
 
-		do { /*
-				 * Derzeitig endlos Schleife | Soll den Gamescreen alle x Millisekunden updaten
-				 */
+		do { /* Updated den GameScreen & holt sich vorher alle benötigten Variablen*/
 
 			positionWall = wall.getWand();
 			positionSnake = snake.getSchlange();
