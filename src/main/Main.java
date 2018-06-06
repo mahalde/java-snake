@@ -21,6 +21,8 @@ public class Main {
 			return;
 		}
 
+		String name = IO.readString("Wie ist dein Name: ");
+		
 		Wall wall = new Wall(screen.getWidth(), screen.getHeight()); /* Erstellt die Wall Position */
 		ArrayList<int[]> positionWall = new ArrayList<int[]>();
 		positionWall = wall.getWand();
@@ -55,7 +57,7 @@ public class Main {
 
 		snake.running = false;
 		EndScreen endScreen = new EndScreen();
-		endScreen.show(snake.getPosition().size(), game.reason);
+		endScreen.show(snake.getPosition().size(), game.reason, name);
 	}
 
 }

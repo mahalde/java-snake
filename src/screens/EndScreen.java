@@ -2,7 +2,7 @@ package screens;
 
 public class EndScreen {
 
-	public void show(int snakeLength, char reason) {
+	public void show(int snakeLength, char reason, String name) {
 		this.showGameOver();
 		System.out.println();
 		switch (reason) {
@@ -27,16 +27,16 @@ public class EndScreen {
 		}
 		System.out.println();
 		if (snakeLength < 5) {
-			System.out.println("Das war keine gute Leistung.");
+			System.out.println("Das war keine gute Leistung, " + name + ".");
 			System.out.println("Du musst noch mehr üben!");
 		} else if (snakeLength < 15) {
-			System.out.println("Das ist eine akzeptable Leistung.");
+			System.out.println("Das ist eine akzeptable Leistung, " + name + ".");
 			System.out.println("Mit ein bisschen mehr üben kann die Leistung noch besser werden!");
 		} else if (snakeLength < 30) {
-			System.out.println("Das ist eine gute Leistung.");
+			System.out.println("Das ist eine gute Leistung, " + name + ".");
 			System.out.println("Du bist auf einem guten Weg!");
 		} else {
-			System.out.println("Fantastische Leistung!");
+			System.out.println("Fantastische Leistung, " + name + ".");
 			System.out.println("Weiter so, Meister!");
 		}
 
