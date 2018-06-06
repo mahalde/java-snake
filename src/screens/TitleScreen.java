@@ -6,7 +6,7 @@ import main.IO;
 
 public class TitleScreen {
 	private int selected = 0;
-	Settings settings = new Settings();
+	SettingsScreen settings = new SettingsScreen();
 
 	public TitleScreen() {
 		
@@ -35,7 +35,7 @@ public class TitleScreen {
 
 			break;
 		case 4: /* Credits */
-			new Credits(); /* Erstellt ein Objekt der Credits (Ist nur eine Textausgabe) */
+			new CreditScreen(); /* Erstellt ein Objekt der Credits (Ist nur eine Textausgabe) */
 			try {
 				TimeUnit.SECONDS.sleep(5); /* Wartet 5 Sekunden */
 			} catch (InterruptedException e) {

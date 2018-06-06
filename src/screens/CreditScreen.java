@@ -1,7 +1,7 @@
 package screens;
 
-public class Credits {
-	public Credits() {
+public class CreditScreen {
+	public CreditScreen() {
 		show();
 	}
 	

@@ -5,12 +5,12 @@ import main.IO;
 import main.Snake;
 import main.Wall;
 
-public class Settings {
+public class SettingsScreen {
 	private int height = 15;
 	private int width = 15;
 	private int change = 0;
 
-	public Settings() {
+	public SettingsScreen() {
 
 	}
 
