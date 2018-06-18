@@ -2,7 +2,7 @@
 Dies ist unser Spiel "Snake" in der Konsole. Am Anfang können Voreinstellungen getroffen werden,
 wenn man zu dem "Einstellungs"-Bildschirm navigiert, können Größe und Symbole eingestellt werden.
 Danach kann man das Spiel starten, man navigiert die Schlange, indem man die Richtung('w', 'a', 's' oder 'd')
-eingibt und mit 'Enter' bestätigt. Die Schlange wird ab bestimmten Punktanzahlen schneller.
+eingibt und mit der 'Enter'-Taste bestätigt. Die Schlange wird ab bestimmten Punktanzahlen schneller.
 
 
 - main Package
