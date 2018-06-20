@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class GameObject {
 
-
-	int[] coordinate = new int[2]; /* x & y Koordinaten */
-	ArrayList<int[]> position = new ArrayList<int[]>(); /* ArrayList, 2 dimensional dargestellt durch int-Array */
+	/**
+	 * Koordinatenpaar als ( y | x )
+	 */
+	int[] coordinate = new int[2];
 	
-	public GameObject() { /* Konstruktor des GameObjects */
-		
-	}
+	/**
+	 * ArrayList, 2 dimensional dargestellt durch int-Array
+	 */
+	ArrayList<int[]> position = new ArrayList<int[]>();
 
 	public ArrayList<int[]> getPosition() {
 		return position;
@@ -20,14 +22,11 @@ public class GameObject {
 		this.position = position;
 	}
 
-
 	public int[] getCoordinate() {
 		return coordinate;
 	}
 
-
 	public void setCoordinate(int[] coordinate) {
 		this.coordinate = coordinate;
 	}
-	
 }

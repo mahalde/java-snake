@@ -5,7 +5,8 @@ public class CreditScreen {
 		show();
 	}
 	
-	void show() { /* Zeigt den Credits Schriftzug */
+	// Zeigt den Credits Schriftzug 
+	void show() { 
 		System.out.println("   _____              _ _ _       ");
 		System.out.println("  / ____|            | (_) |      ");
 		System.out.println(" | |     _ __ ___  __| |_| |_ ___ ");
