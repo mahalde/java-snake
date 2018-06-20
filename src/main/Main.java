@@ -24,30 +24,15 @@ public class Main {
 		String name = IO.readString("Wie ist dein Name: ");
 		
 		Wall wall = new Wall(screen.getWidth(), screen.getHeight()); /* Erstellt die Wall Position */
-		ArrayList<int[]> positionWall = new ArrayList<int[]>();
-		positionWall = wall.getWand();
-
-		Snake snake = new Snake(screen.getWidth(), screen.getHeight(), positionWall); /* Erstellt die Snake Position */
-		ArrayList<int[]> positionSnake = new ArrayList<int[]>();
-		positionSnake = snake.getSchlange();
-
-		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWall,
-				positionSnake); /* Erstellt die Fruit Position */
-		ArrayList<int[]> positionFruit = new ArrayList<int[]>();
-		positionFruit = fruit.getFrucht();
-
-		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), positionWall, positionSnake,
-				positionFruit); /* Erstellt ein Objekt des Gamescreen */
+		Snake snake = new Snake(screen.getWidth(), screen.getHeight(), wall.getWand()); /* Erstellt die Snake Position */
+		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), wall.getWand(), snake.getSchlange()); /* Erstellt die Fruit Position */
+		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), wall.getWand(), snake.getSchlange(), fruit.getFrucht()); /* Erstellt ein Objekt des Gamescreen */
 
 		do { /* Updated den GameScreen & holt sich vorher alle benötigten Variablen*/
-
-			positionWall = wall.getWand();
-			positionSnake = snake.getSchlange();
-			positionFruit = fruit.getFrucht();
 			if (game.fruitHit == true) {
-				fruit.createFruit(screen.getWidth(), screen.getHeight(), positionWall, positionSnake);
+				fruit.createFruit(screen.getWidth(), screen.getHeight(), wall.getWand(), snake.getSchlange());
 			}
-			game.update(screen.getWidth(), screen.getHeight(), positionWall, positionSnake, positionFruit, snake);
+			game.update(screen.getWidth(), screen.getHeight(), wall.getWand(), snake.getSchlange(), fruit.getFrucht(), snake);
 			try {
 				snake.keyReader();
 			} catch (IOException e) {

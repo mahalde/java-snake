@@ -1,13 +1,8 @@
 # java-snake
-Dies ist unser Spiel "Snake" in der Konsole. Am Anfang können Voreinstellungen getroffen werden,
-wenn man zu dem "Einstellungs"-Bildschirm navigiert, können Größe und Symbole eingestellt werden.
+Dies ist unser Spiel "Snake" in der Konsole. Am Anfang koennen Voreinstellungen getroffen werden,
+wenn man zu dem "Einstellungs"-Bildschirm navigiert, koennen Groesze und Symbole eingestellt werden.
 Danach kann man das Spiel starten, man navigiert die Schlange, indem man die Richtung('w', 'a', 's' oder 'd')
-<<<<<<< HEAD
 eingibt und mit der 'Enter'-Taste best�tigt. Die Schlange wird ab bestimmten Punktanzahlen schneller.
-=======
-eingibt und mit 'Enter' bestätigt. Die Schlange wird ab bestimmten Punktanzahlen schneller.
->>>>>>> branch 'master' of https://www.github.com/onlyflix/java-snake
-
 
 - main Package
 	- Fruit.java
