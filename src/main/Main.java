@@ -9,40 +9,37 @@ import screens.TitleScreen;
 public class Main {
 
 	public static void main(String[] args) {
-		/* Erstellt den TitleScreen, dabei folgt die weitere Eingabe der Einstellungen
-		   ueber den User */
-		TitleScreen screen = new TitleScreen();
+		TitleScreen screen = new TitleScreen(); /*
+												 * Erstellt den TitleScreen, dabei folgt die weitere Eingabe der z.B.
+												 * Einstellung über den User
+												 */
 		do {
 			screen.show();
 		} while (screen.getSelected() == 2 || screen.getSelected() == 4);
 
-		if (screen.getSelected() == 3) { // Wenn "Beenden" ausgewaehlt wurde
+		if (screen.getSelected() == 3) { /* Wenn "Beenden" ausgewaehlt wurde */
 			return;
 		}
 
 		String name = IO.readString("Wie ist dein Name: ");
-
-		// Erstellt die Wall Position
-		Wall wall = new Wall(screen.getWidth(), screen.getHeight());
+		
+		Wall wall = new Wall(screen.getWidth(), screen.getHeight()); /* Erstellt die Wall Position */
 		ArrayList<int[]> positionWall = new ArrayList<int[]>();
 		positionWall = wall.getWand();
 
-		// Erstellt die Snake Position
-		Snake snake = new Snake(screen.getWidth(), screen.getHeight(), positionWall);
+		Snake snake = new Snake(screen.getWidth(), screen.getHeight(), positionWall); /* Erstellt die Snake Position */
 		ArrayList<int[]> positionSnake = new ArrayList<int[]>();
 		positionSnake = snake.getSchlange();
 
-		// Erstellt die Fruit Position
-		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWall, positionSnake);
+		Fruit fruit = new Fruit(screen.getWidth(), screen.getHeight(), positionWall,
+				positionSnake); /* Erstellt die Fruit Position */
 		ArrayList<int[]> positionFruit = new ArrayList<int[]>();
 		positionFruit = fruit.getFrucht();
 
-		// Erstellt ein Objekt des Gamescreen
 		GameScreen game = new GameScreen(screen.getWidth(), screen.getHeight(), positionWall, positionSnake,
-				positionFruit);
+				positionFruit); /* Erstellt ein Objekt des Gamescreen */
 
-		// Updated den GameScreen & holt sich vorher alle benötigten Variablen
-		do {
+		do { /* Updated den GameScreen & holt sich vorher alle benötigten Variablen*/
 
 			positionWall = wall.getWand();
 			positionSnake = snake.getSchlange();
